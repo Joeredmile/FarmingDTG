@@ -63,4 +63,7 @@ script = ExtResource("2_elckd")
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
 wait_time = 1.547
 
+[node name="Timer2" type="Timer" parent="." unique_id=209017176]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
