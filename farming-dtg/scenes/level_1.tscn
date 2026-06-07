@@ -86,3 +86,12 @@ position = Vector2(407, 341)
 
 [node name="carrot" parent="." unique_id=1070333889 instance=ExtResource("3_rus8k")]
 position = Vector2(470, 256)
+
+[node name="carrot2" parent="." unique_id=451992527 instance=ExtResource("3_rus8k")]
+position = Vector2(403, 256)
+
+[node name="carrot3" parent="." unique_id=1694236911 instance=ExtResource("3_rus8k")]
+position = Vector2(534, 256)
+
+[node name="carrot4" parent="." unique_id=1307537 instance=ExtResource("3_rus8k")]
+position = Vector2(334, 256)

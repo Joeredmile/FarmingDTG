@@ -54,16 +54,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elckd"]
+size = Vector2(49, 48)
+
 [node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
 sprite_frames = SubResource("SpriteFrames_wql3v")
-animation = &"stage_3_a"
+animation = &"stage_3_b"
 autoplay = "stage_1"
 script = ExtResource("2_elckd")
 
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
-wait_time = 1.547
+wait_time = 0.405
 
 [node name="Timer2" type="Timer" parent="." unique_id=209017176]
+wait_time = 0.424
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1914841187]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=238873818]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_elckd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
