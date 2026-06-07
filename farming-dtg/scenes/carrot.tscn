@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bie0yhysru3mp"]
+
+[ext_resource type="Texture2D" uid="uid://bmphl3noqbgb" path="res://assets/Carrot growing.png" id="1_btq7l"]
+[ext_resource type="Script" uid="uid://crdgjjp7g4j6d" path="res://scripts/carrot.gd" id="2_elckd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elckd"]
+atlas = ExtResource("1_btq7l")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb1r7"]
+atlas = ExtResource("1_btq7l")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0dx6"]
+atlas = ExtResource("1_btq7l")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2vgq"]
+atlas = ExtResource("1_btq7l")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wql3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elckd")
+}],
+"loop": false,
+"name": &"stage_1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb1r7")
+}],
+"loop": false,
+"name": &"stage_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0dx6")
+}],
+"loop": true,
+"name": &"stage_3_a",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2vgq")
+}],
+"loop": true,
+"name": &"stage_3_b",
+"speed": 5.0
+}]
+
+[node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
+sprite_frames = SubResource("SpriteFrames_wql3v")
+animation = &"stage_3_a"
+autoplay = "stage_1"
+script = ExtResource("2_elckd")
+
+[node name="Timer" type="Timer" parent="." unique_id=785437089]
+wait_time = 1.547
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
