@@ -84,14 +84,22 @@ tile_set = SubResource("TileSet_rus8k")
 [node name="player" parent="." unique_id=1248459986 instance=ExtResource("2_bswci")]
 position = Vector2(407, 341)
 
-[node name="carrot" parent="." unique_id=1070333889 instance=ExtResource("3_rus8k")]
+[node name="carrots" type="Node" parent="." unique_id=1655944488]
+
+[node name="carrot" parent="carrots" unique_id=1070333889 instance=ExtResource("3_rus8k")]
 position = Vector2(470, 256)
 
-[node name="carrot2" parent="." unique_id=451992527 instance=ExtResource("3_rus8k")]
+[node name="carrot2" parent="carrots" unique_id=451992527 instance=ExtResource("3_rus8k")]
 position = Vector2(403, 256)
 
-[node name="carrot3" parent="." unique_id=1694236911 instance=ExtResource("3_rus8k")]
+[node name="carrot3" parent="carrots" unique_id=1694236911 instance=ExtResource("3_rus8k")]
 position = Vector2(534, 256)
 
-[node name="carrot4" parent="." unique_id=1307537 instance=ExtResource("3_rus8k")]
+[node name="carrot4" parent="carrots" unique_id=1307537 instance=ExtResource("3_rus8k")]
 position = Vector2(334, 256)
+
+[node name="carrot5" parent="carrots" unique_id=1939728694 instance=ExtResource("3_rus8k")]
+position = Vector2(532, 409)
+
+[node name="carrot6" parent="carrots" unique_id=2103492648 instance=ExtResource("3_rus8k")]
+position = Vector2(470, 406)

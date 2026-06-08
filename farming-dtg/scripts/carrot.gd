@@ -1,10 +1,14 @@
 extends AnimatedSprite2D
-@onready var timer_2: Timer = $Timer2
 
 @onready var timer: Timer = $Timer
+@onready var timer_2: Timer = $Timer2
+@onready var timer_3: Timer = $Timer3
+
+
+
 var carrot_watered = false
 var stage_3_variants = ["stage_3_a", "stage_3_b"]
-var carrot_amount = (0)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -43,9 +47,10 @@ func _on_timer_2_timeout():
 
 func _on_area_2d_body_entered(body: Node2D):
 	if animation == "stage_3_a" or animation == "stage_3_b":
-		carrot_amount += 1
-		print(carrot_amount)
-		queue_free()
+		Global.carrot_amount += 1
+		print(Global.carrot_amount)
+		queue_free()		
+		
 	else:
 		pass
 	
