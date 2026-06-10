@@ -19,6 +19,10 @@ func process_movement() -> void:
 	
 	play_animation(direction)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		get_node("gun").shoot()
+
 #animations
 func play_animation(dir: Vector2) -> void:
 	if dir.x > 0:

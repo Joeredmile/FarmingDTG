@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0cjywnn0hvhh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bno7w5uipo0vv" path="res://assets/Farm Asset Pack V1.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bftosykhmaalc" path="res://scenes/gun.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -76,3 +77,5 @@ shape = SubResource("RectangleShape2D_dqkch")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=212497309]
 zoom = Vector2(2.43, 2.43)
 position_smoothing_enabled = true
+
+[node name="gun" parent="." unique_id=143656072 instance=ExtResource("3_qhqgy")]

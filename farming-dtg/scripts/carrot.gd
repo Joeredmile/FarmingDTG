@@ -7,7 +7,7 @@ extends AnimatedSprite2D
 
 
 var carrot_watered = false
-var stage_3_variants = ["stage_3_a", "stage_3_b"]
+var stage_3_variants = ["stage_3_a", "stage_3_b", "stage_3_c"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,7 +46,7 @@ func _on_timer_2_timeout():
 
 
 func _on_area_2d_body_entered(body: Node2D):
-	if animation == "stage_3_a" or animation == "stage_3_b":
+	if animation == "stage_3_a" or animation == "stage_3_b" or animation == "stage_3_c":
 		Global.carrot_amount += 1
 		print(Global.carrot_amount)
 		queue_free()		

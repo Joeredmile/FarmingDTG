@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bmphl3noqbgb" path="res://assets/Carrot growing.png" id="1_btq7l"]
 [ext_resource type="Script" uid="uid://crdgjjp7g4j6d" path="res://scripts/carrot.gd" id="2_elckd"]
+[ext_resource type="Texture2D" uid="uid://bbljcvvfu6v7f" path="res://assets/Farm Asset Pack V1 (1).png" id="2_mb1r7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elckd"]
 atlas = ExtResource("1_btq7l")
@@ -12,12 +13,20 @@ atlas = ExtResource("1_btq7l")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0dx6"]
-atlas = ExtResource("1_btq7l")
-region = Rect2(0, 64, 64, 64)
+atlas = ExtResource("2_mb1r7")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2vgq"]
-atlas = ExtResource("1_btq7l")
+atlas = ExtResource("2_mb1r7")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wql3v"]
+atlas = ExtResource("2_mb1r7")
 region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shfyt"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(128, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wql3v"]
 animations = [{
@@ -32,6 +41,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mb1r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0dx6")
 }],
 "loop": false,
 "name": &"stage_2",
@@ -39,7 +51,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x0dx6")
+"texture": SubResource("AtlasTexture_o2vgq")
 }],
 "loop": true,
 "name": &"stage_3_a",
@@ -47,10 +59,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o2vgq")
+"texture": SubResource("AtlasTexture_wql3v")
 }],
 "loop": true,
 "name": &"stage_3_b",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shfyt")
+}],
+"loop": true,
+"name": &"stage_3_c",
 "speed": 5.0
 }]
 
@@ -59,7 +79,7 @@ size = Vector2(49, 48)
 
 [node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
 sprite_frames = SubResource("SpriteFrames_wql3v")
-animation = &"stage_3_b"
+animation = &"stage_1"
 autoplay = "stage_1"
 script = ExtResource("2_elckd")
 
