@@ -1,7 +1,7 @@
 extends Sprite2D
 @onready var marker_2d: Marker2D = $Marker2D
 const BULLET = preload("res://scenes/bullet.tscn")
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $"../timer"
 
 func _input(event):
 	if event.is_action_pressed("hold_gun"):
@@ -20,8 +20,4 @@ func shoot() -> void:
 	var new_bullet = BULLET.instantiate()
 	new_bullet.position = marker_2d.global_position
 	new_bullet.target_position = (get_global_mouse_position() - marker_2d.global_position).normalized()
-	GlobalData.level_1.add_child(new_bullet)
-
-
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	GlobalData.get_tree().current_scene.add_child(new_bullet)

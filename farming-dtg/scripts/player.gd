@@ -1,10 +1,19 @@
 extends CharacterBody2D
 
+var shoot_cooldown = true
 var last_dir := Vector2.DOWN
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var last_direction
+@onready var gun: Sprite2D = $gun
+@onready var timer: Timer = $timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+const Gun = preload("uid://doiuxyiy42dpv")
+const GUN = preload("uid://bftosykhmaalc")
+
+
+func _ready() -> void:
+	set_process_unhandled_input(true)
 
 
 
@@ -20,10 +29,18 @@ func process_movement() -> void:
 	
 	play_animation(direction)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
-		get_node("gun").shoot()
 
+#shooting gun and start timer for cooldown
+func _input(event: InputEvent) -> void:
+	if shoot_cooldown:
+		if event.is_action_pressed("shoot"):
+			get_node("gun").shoot()
+			timer.start()
+			shoot_cooldown = false
+	
+	
+	
+	
 #animations
 func play_animation(dir: Vector2) -> void:
 	if dir != Vector2.ZERO:
@@ -39,9 +56,15 @@ func play_animation(dir: Vector2) -> void:
 		animated_sprite_2d.play("up" if dir != Vector2.ZERO else "idle_up")
 	elif d.y > 0:
 		animated_sprite_2d.play("down" if dir != Vector2.ZERO else "idle_down")
-	
-	
+
+
 func _unhandled_input(event):
 	if event.is_action_pressed("hold_gun"):
-		$ballsprite.visible = not $ballsprite.visible
-	
+		$gun.show()
+	if event.is_action_pressed("no_hold_gun"):
+		$gun.hide()
+	else:
+		pass
+#shooting cooldown
+func _on_timer_timeout() -> void:
+	shoot_cooldown = true

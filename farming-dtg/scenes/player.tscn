@@ -274,3 +274,8 @@ zoom = Vector2(1.84, 1.84)
 position_smoothing_enabled = true
 
 [node name="gun" parent="." unique_id=143656072 instance=ExtResource("3_qhqgy")]
+
+[node name="timer" type="Timer" parent="." unique_id=767222308]
+wait_time = 1.4549999999999998
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

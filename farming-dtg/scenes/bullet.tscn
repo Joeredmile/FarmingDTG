@@ -7,6 +7,7 @@
 radius = 3.0
 
 [node name="bullet" type="CharacterBody2D" unique_id=1902541933]
+z_index = 50
 script = ExtResource("1_y25gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158063134]
