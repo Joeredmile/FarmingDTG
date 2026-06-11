@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var last_dir := Vector2.DOWN
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var last_direction
@@ -26,28 +26,22 @@ func _input(event: InputEvent) -> void:
 
 #animations
 func play_animation(dir: Vector2) -> void:
-	if dir.x > 0:
-		animated_sprite_2d.play("right")
-	else:
-		pass
-func play_animation2(dir: Vector2) -> void:
-	if dir.x < 0:
-		animated_sprite_2d.play("left")
-	else:
-		pass
-func play_animation3(dir: Vector2) -> void:
-	if dir.y < 0:
-		animated_sprite_2d.play("up")
-	else:
-		pass
-func play_animation4(dir: Vector2) -> void:
-	if dir.y > 0:
-		animated_sprite_2d.play("down")
-	else:
-		pass
+	if dir != Vector2.ZERO:
+		last_dir = dir
 
-	func _input(event: InputEvent):
-		if event.is_action_pressed("hold_gun"):
-			$ballsprite.visible = true
-		
+	var d = dir if dir != Vector2.ZERO else last_dir
+	
+	if d.x > 0:
+		animated_sprite_2d.play("right" if dir != Vector2.ZERO else "idle_right")
+	elif d.x < 0:
+		animated_sprite_2d.play("left" if dir != Vector2.ZERO else "idle_left")
+	elif d.y < 0:
+		animated_sprite_2d.play("up" if dir != Vector2.ZERO else "idle_up")
+	elif d.y > 0:
+		animated_sprite_2d.play("down" if dir != Vector2.ZERO else "idle_down")
+	
+	
+func _unhandled_input(event):
+	if event.is_action_pressed("hold_gun"):
+		$ballsprite.visible = not $ballsprite.visible
 	

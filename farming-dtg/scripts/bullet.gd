@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
+var target_position: Vector2
 @export var speed : int = 700
-var target_position
 var despawn_time = 1
 
 func _ready() -> void:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://drb7rwn28grin"]
+
+[ext_resource type="Texture2D" uid="uid://xlg1qlppn2x1" path="res://assets/dirt patch.png" id="1_r36lh"]
+
+[node name="land" type="Sprite2D" unique_id=629231820]
+texture = ExtResource("1_r36lh")

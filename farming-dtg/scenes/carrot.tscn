@@ -82,11 +82,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elckd"]
 size = Vector2(49, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb1r7"]
+size = Vector2(49, 49)
+
 [node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_wql3v")
-animation = &"stage_4_a"
+animation = &"stage_3"
 autoplay = "stage_1"
 script = ExtResource("2_elckd")
+
+[node name="waterprompt" type="Label" parent="." unique_id=1097311694]
+visible = false
+z_index = 19
+offset_right = 128.0
+offset_bottom = 23.0
+text = "Press F to water."
 
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
 wait_time = 0.405
@@ -102,6 +113,15 @@ wait_time = 0.424
 position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_elckd")
 
+[node name="watering" type="Area2D" parent="." unique_id=835925954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="watering" unique_id=2143018933]
+position = Vector2(1.5, 3.5)
+shape = SubResource("RectangleShape2D_mb1r7")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="watering" to="." method="_on_watering_body_entered"]
+[connection signal="body_exited" from="watering" to="." method="_on_watering_body_exited"]
