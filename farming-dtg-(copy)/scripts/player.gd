@@ -46,8 +46,6 @@ func play_animation4(dir: Vector2) -> void:
 	else:
 		pass
 
-	func _input(event: InputEvent):
-		if event.is_action_pressed("hold_gun"):
-			$ballsprite.visible = true
-		
+	
+	
 	
