@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cp6rahbalg2ed"]
 
 [ext_resource type="Script" uid="uid://b0cjywnn0hvhh" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://dcu86hmieah0h" path="res://inventory/playerinv.tres" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dcc7v17xh2fqh" path="res://assets/Character (2).png" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bftosykhmaalc" path="res://scenes/gun.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("3_dqkch")
@@ -256,6 +258,7 @@ size = Vector2(20, 39)
 [node name="player" type="CharacterBody2D" unique_id=1248459986]
 z_index = 1
 script = ExtResource("1_g2els")
+inv = ExtResource("2_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=148649698]
 position = Vector2(-9.536743e-07, -9.536743e-07)
@@ -270,12 +273,19 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=212497309]
-zoom = Vector2(1.84, 1.84)
+zoom = Vector2(1.72, 1.72)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.505
 
 [node name="gun" parent="." unique_id=143656072 instance=ExtResource("3_qhqgy")]
 
 [node name="timer" type="Timer" parent="." unique_id=767222308]
 wait_time = 1.4549999999999998
+
+[node name="Inv_UI" parent="." unique_id=2077556324 instance=ExtResource("5_qlg0r")]
+offset_left = -43.0
+offset_top = -111.0
+offset_right = 42.0
+offset_bottom = -48.0
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

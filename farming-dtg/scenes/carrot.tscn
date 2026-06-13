@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmfieel5tugr" path="res://assets/Carrot.png" id="1_mb1r7"]
 [ext_resource type="Script" uid="uid://crdgjjp7g4j6d" path="res://scripts/carrot.gd" id="2_elckd"]
 [ext_resource type="Texture2D" uid="uid://bbljcvvfu6v7f" path="res://assets/Farm Asset Pack V1 (1).png" id="2_mb1r7"]
+[ext_resource type="Resource" uid="uid://clqeu4gj26baw" path="res://inventory/items/carrot.tres" id="4_x0dx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0dx6"]
 atlas = ExtResource("1_mb1r7")
@@ -91,6 +92,7 @@ sprite_frames = SubResource("SpriteFrames_wql3v")
 animation = &"stage_3"
 autoplay = "stage_1"
 script = ExtResource("2_elckd")
+item = ExtResource("4_x0dx6")
 
 [node name="waterprompt" type="Label" parent="." unique_id=1097311694]
 visible = false

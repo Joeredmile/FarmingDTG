@@ -5,10 +5,12 @@ extends AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
-
+var player = null
 var player_in_area = false
 var carrot_watered = false
 var stage_4_variants = ["stage_4_a"]
+
+@export var item: InvItem
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +21,7 @@ func _on_watering_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		player_in_area = true
 		waterprompt.visible = true
+		player = body
 		
 		
 func _on_watering_body_exited(body: Node2D) -> void:
@@ -45,6 +48,7 @@ func _process(delta: float) -> void:
 			pass
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
+			player.collect(item)
 			GlobalData.carrot_amount += 1
 			print(GlobalData.carrot_amount)
 			queue_free()

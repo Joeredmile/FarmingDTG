@@ -10,7 +10,7 @@ var last_direction
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 const Gun = preload("uid://doiuxyiy42dpv")
 const GUN = preload("uid://bftosykhmaalc")
-
+@export var inv: Inv
 
 func _ready() -> void:
 	set_process_unhandled_input(true)
@@ -47,7 +47,6 @@ func play_animation(dir: Vector2) -> void:
 		last_dir = dir
 
 	var d = dir if dir != Vector2.ZERO else last_dir
-	
 	if d.x > 0:
 		animated_sprite_2d.play("right" if dir != Vector2.ZERO else "idle_right")
 	elif d.x < 0:
@@ -68,3 +67,6 @@ func _unhandled_input(event):
 #shooting cooldown
 func _on_timer_timeout() -> void:
 	shoot_cooldown = true
+
+func collect(item):
+	inv.insert(item)
