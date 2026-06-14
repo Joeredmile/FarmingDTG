@@ -9,7 +9,7 @@ var last_direction
 @onready var timer: Timer = $timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 const Gun = preload("uid://doiuxyiy42dpv")
-const GUN = preload("uid://bftosykhmaalc")
+const GUN = preload("res://scenes/gun.tscn")
 @export var inv: Inv
 
 func _ready() -> void:
