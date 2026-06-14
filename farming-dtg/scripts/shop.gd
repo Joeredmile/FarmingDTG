@@ -22,7 +22,7 @@ func _on_shoparea_body_exited(body):
 		print("Player left shop, player_ref cleared")
 
 
-#function
+#function for the input key
 func _process(delta):
 	if player_in_shop and Input.is_action_just_pressed("interact"):
 		sell_carrots()

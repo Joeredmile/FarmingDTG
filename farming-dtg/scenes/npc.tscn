@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://3h3p33x50oot"]
+
+[ext_resource type="Script" uid="uid://bj7u6uy323lq2" path="res://scripts/npc.gd" id="1_abqhh"]
+[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="1_nh2m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abqhh"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv78h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abqhh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_e",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_n",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_s",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_w",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n8xq"]
+size = Vector2(56, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wlns"]
+size = Vector2(90, 79)
+
+[node name="npc" type="CharacterBody2D" unique_id=1750434283]
+script = ExtResource("1_abqhh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=205768656]
+scale = Vector2(0.4453125, 0.4453125)
+sprite_frames = SubResource("SpriteFrames_rv78h")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947495830]
+shape = SubResource("RectangleShape2D_7n8xq")
+
+[node name="chat_detection_area" type="Area2D" parent="." unique_id=1030078864]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area" unique_id=199550987]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_4wlns")
+
+[node name="Timer" type="Timer" parent="." unique_id=1504751349]
+
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

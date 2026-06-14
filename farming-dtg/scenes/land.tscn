@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://drb7rwn28grin"]
 
 [ext_resource type="Texture2D" uid="uid://xlg1qlppn2x1" path="res://assets/dirt patch.png" id="1_r36lh"]
+[ext_resource type="Script" uid="uid://bruo0rcxhxkhm" path="res://scripts/land.gd" id="2_cthhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84fu1"]
+size = Vector2(73, 72)
 
 [node name="land" type="Sprite2D" unique_id=629231820]
 texture = ExtResource("1_r36lh")
+script = ExtResource("2_cthhe")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1728666151]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=528261504]
+position = Vector2(2.5, 5)
+shape = SubResource("RectangleShape2D_84fu1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

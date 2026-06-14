@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://cwive6qpsobtb" path="res://assets/Base grass ground.png" id="2_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://cp6rahbalg2ed" path="res://scenes/player.tscn" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://bie0yhysru3mp" path="res://scenes/carrot.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://drb7rwn28grin" path="res://scenes/land.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://3h3p33x50oot" path="res://scenes/npc.tscn" id="5_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://do5rl8ihpbbfh" path="res://scenes/shop.tscn" id="6_fcfvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
@@ -33,57 +33,34 @@ tile_set = SubResource("TileSet_rus8k")
 z_index = 4
 position = Vector2(407, 341)
 
-[node name="carrots" type="Node" parent="." unique_id=1655944488]
-
-[node name="carrot" parent="carrots" unique_id=1070333889 instance=ExtResource("3_rus8k")]
-position = Vector2(470, 256)
-
-[node name="carrot2" parent="carrots" unique_id=451992527 instance=ExtResource("3_rus8k")]
-position = Vector2(403, 256)
-
-[node name="carrot3" parent="carrots" unique_id=1694236911 instance=ExtResource("3_rus8k")]
-position = Vector2(534, 256)
-
-[node name="carrot4" parent="carrots" unique_id=1307537 instance=ExtResource("3_rus8k")]
-position = Vector2(334, 256)
-
-[node name="carrot5" parent="carrots" unique_id=1939728694 instance=ExtResource("3_rus8k")]
-position = Vector2(532, 409)
-
-[node name="carrot6" parent="carrots" unique_id=2103492648 instance=ExtResource("3_rus8k")]
-position = Vector2(470, 406)
-
-[node name="carrot7" parent="carrots" unique_id=733589557 instance=ExtResource("3_rus8k")]
-position = Vector2(335, 406)
-
-[node name="carrot8" parent="carrots" unique_id=1969355607 instance=ExtResource("3_rus8k")]
-position = Vector2(408, 406)
-
 [node name="lands" type="Node" parent="." unique_id=939815125]
 
 [node name="land" parent="lands" unique_id=629231820 instance=ExtResource("5_4nkto")]
-position = Vector2(333, 256)
+position = Vector2(166, 211)
 
 [node name="land2" parent="lands" unique_id=978128663 instance=ExtResource("5_4nkto")]
-position = Vector2(530, 403)
+position = Vector2(565, 330)
 
 [node name="land3" parent="lands" unique_id=1174440619 instance=ExtResource("5_4nkto")]
-position = Vector2(469, 397)
+position = Vector2(432, 330)
 
 [node name="land4" parent="lands" unique_id=595523623 instance=ExtResource("5_4nkto")]
-position = Vector2(405, 402)
+position = Vector2(299, 330)
 
 [node name="land5" parent="lands" unique_id=1883801699 instance=ExtResource("5_4nkto")]
-position = Vector2(336, 400)
+position = Vector2(166, 330)
 
 [node name="land6" parent="lands" unique_id=964821737 instance=ExtResource("5_4nkto")]
-position = Vector2(529, 261)
+position = Vector2(565, 211)
 
 [node name="land7" parent="lands" unique_id=745619684 instance=ExtResource("5_4nkto")]
-position = Vector2(402, 256)
+position = Vector2(432, 211)
 
 [node name="land8" parent="lands" unique_id=982251312 instance=ExtResource("5_4nkto")]
-position = Vector2(468, 258)
+position = Vector2(299, 211)
+
+[node name="npc" parent="lands" unique_id=1750434283 instance=ExtResource("5_fcfvj")]
+position = Vector2(401, 470)
 
 [node name="shop" parent="." unique_id=1824548626 instance=ExtResource("6_fcfvj")]
 position = Vector2(774, 264)

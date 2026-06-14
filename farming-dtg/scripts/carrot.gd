@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-
+var land_ref = null
 @onready var waterprompt: Label = $waterprompt
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
@@ -46,13 +46,17 @@ func _process(delta: float) -> void:
 			timer_3.start()
 		else:
 			pass
+
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
 			player.collect(item)
 			GlobalData.carrot_amount += 1
 			print(GlobalData.carrot_amount)
+			if land_ref:
+				land_ref.reset_patch()
+			else:
+				print("ERROR: land_ref is NULL")
 			queue_free()
-
 	
 
 	#watering logic for the carrots
