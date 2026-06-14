@@ -45,16 +45,32 @@ func _input(event: InputEvent) -> void:
 func play_animation(dir: Vector2) -> void:
 	if dir != Vector2.ZERO:
 		last_dir = dir
+		
+#water can
+	if Input.is_action_pressed("water"):
+		var d = dir if dir != Vector2.ZERO else last_dir
+		if d.x > 0:
+			animated_sprite_2d.play("right" if dir != Vector2.ZERO else "water_right")
+		elif d.x < 0:
+			animated_sprite_2d.play("left" if dir != Vector2.ZERO else "water_left")
+		elif d.y < 0:
+			animated_sprite_2d.play("up" if dir != Vector2.ZERO else "water_up")
+		elif d.y > 0:
+			animated_sprite_2d.play("down" if dir != Vector2.ZERO else "water_down")
+			
 
-	var d = dir if dir != Vector2.ZERO else last_dir
-	if d.x > 0:
-		animated_sprite_2d.play("right" if dir != Vector2.ZERO else "idle_right")
-	elif d.x < 0:
-		animated_sprite_2d.play("left" if dir != Vector2.ZERO else "idle_left")
-	elif d.y < 0:
-		animated_sprite_2d.play("up" if dir != Vector2.ZERO else "idle_up")
-	elif d.y > 0:
-		animated_sprite_2d.play("down" if dir != Vector2.ZERO else "idle_down")
+
+	else:
+		var d = dir if dir != Vector2.ZERO else last_dir
+		if d.x > 0:
+			animated_sprite_2d.play("right" if dir != Vector2.ZERO else "idle_right")
+		elif d.x < 0:
+			animated_sprite_2d.play("left" if dir != Vector2.ZERO else "idle_left")
+		elif d.y < 0:
+			animated_sprite_2d.play("up" if dir != Vector2.ZERO else "idle_up")
+		elif d.y > 0:
+			animated_sprite_2d.play("down" if dir != Vector2.ZERO else "idle_down")
+
 
 
 func _unhandled_input(event):
