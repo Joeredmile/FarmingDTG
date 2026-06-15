@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const speed = 390
+const speed = 100
 var current_state = IDLE
 
 var dir = Vector2.RIGHT
@@ -42,6 +42,7 @@ func _process(delta):
 			NEW_DIR:
 				dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN])
 			MOVE:
+				print("working")
 				move(delta)
 				
 func choose(array):
@@ -66,3 +67,4 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	current_state = choose([IDLE, NEW_DIR, MOVE])
+	$Timer.start()
