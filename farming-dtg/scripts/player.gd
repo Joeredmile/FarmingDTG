@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var shoot_cooldown = true
 var last_dir := Vector2.DOWN
-const SPEED = 10000.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 var last_direction
 @onready var gun: Sprite2D = $gun

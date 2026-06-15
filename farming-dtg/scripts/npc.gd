@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const speed = 100
+const speed = 40
 var current_state = IDLE
 
 var dir = Vector2.RIGHT
@@ -42,7 +42,7 @@ func _process(delta):
 			NEW_DIR:
 				dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN])
 			MOVE:
-				print("working")
+				print("npc_working")
 				move(delta)
 				
 func choose(array):
