@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bftosykhmaalc"]
+[gd_scene format=3 uid="uid://vbsggi71fu0y"]
 
 [ext_resource type="Texture2D" uid="uid://s6kk66aggyj3" path="res://assets/shotgun and bullets just shotgun.png" id="1_x77fm"]
 [ext_resource type="Script" uid="uid://doiuxyiy42dpv" path="res://scripts/gun.gd" id="2_og67c"]

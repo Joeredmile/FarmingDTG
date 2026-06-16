@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bfvmb78q1wwth" path="res://assets/Character watering (1).png" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(20, 74)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("3_dqkch")
 region = Rect2(192, 0, 64, 64)
@@ -329,24 +332,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(20, 39)
-
 [node name="player" type="CharacterBody2D" unique_id=1248459986]
 z_index = 1
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=148649698]
 position = Vector2(-9.536743e-07, -9.536743e-07)
 scale = Vector2(1.265625, 1.265625)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"water_up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
-visible = false
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=212497309]
 zoom = Vector2(1.72, 1.72)

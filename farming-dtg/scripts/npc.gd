@@ -50,7 +50,7 @@ func choose(array):
 	return array.front()
 	
 func move(delta):
-	if !is_chatting:
+	if is_chatting == false:
 		position += dir * speed * delta
 
 
@@ -58,7 +58,8 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = body
 		player_in_chat_zone = true
-
+		is_chatting = true
+		
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):

@@ -2,7 +2,7 @@ extends Sprite2D
 @onready var marker_2d: Marker2D = $Marker2D
 const BULLET = preload("res://scenes/bullet.tscn")
 @onready var timer: Timer = $"../timer"
-
+#@onready var bulletTimer: Timer = $bulletTimer
 func _input(event):
 	if event.is_action_pressed("hold_gun"):
 		visible = not visible
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func shoot() -> void:
 	if not visible:
 		return
-	
+	#bulletTimer.start()
 	var new_bullet = BULLET.instantiate()
 	new_bullet.position = marker_2d.global_position
 	new_bullet.target_position = (get_global_mouse_position() - marker_2d.global_position).normalized()
