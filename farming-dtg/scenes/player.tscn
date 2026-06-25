@@ -337,6 +337,23 @@ z_index = 1
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
 
+[node name="player_ui" type="Control" parent="." unique_id=485953845]
+z_index = 9
+layout_mode = 3
+anchors_preset = 0
+offset_left = -330.0
+offset_top = -180.0
+offset_right = -234.0
+offset_bottom = -140.0
+
+[node name="Label" type="Label" parent="player_ui" unique_id=1815409710]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 143.0
+offset_bottom = 67.0
+text = "Print(\"Coins:\", GlobalData.coin_amount)"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_dqkch")
