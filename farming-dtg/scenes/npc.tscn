@@ -214,6 +214,18 @@ shape = SubResource("RectangleShape2D_4wlns")
 wait_time = 0.901
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=91668110]
+
+[node name="DialogBox" type="Panel" parent="CanvasLayer" unique_id=238359668 groups=["dialog"]]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogLabel" type="Label" parent="CanvasLayer/DialogBox" unique_id=587467771]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
