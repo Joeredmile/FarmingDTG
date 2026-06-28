@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b0cjywnn0hvhh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Resource" uid="uid://dcu86hmieah0h" path="res://inventory/playerinv.tres" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dcc7v17xh2fqh" path="res://assets/Character (2).png" id="3_dqkch"]
-[ext_resource type="Script" uid="uid://dieansq3rshk6" path="res://scripts/label.gd" id="3_fjrip"]
 [ext_resource type="PackedScene" uid="uid://vbsggi71fu0y" path="res://scenes/gun.tscn" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bfvmb78q1wwth" path="res://assets/Character watering (1).png" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
@@ -338,12 +337,22 @@ z_index = 1
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440045589]
+[node name="player_ui" type="Control" parent="." unique_id=485953845]
+z_index = 9
+layout_mode = 3
+anchors_preset = 0
+offset_left = -330.0
+offset_top = -180.0
+offset_right = -234.0
+offset_bottom = -140.0
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1815409710]
-offset_right = 322.0
-offset_bottom = 41.0
-script = ExtResource("3_fjrip")
+[node name="Label" type="Label" parent="player_ui" unique_id=1815409710]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 143.0
+offset_bottom = 67.0
+text = "Print(\"Coins:\", GlobalData.coin_amount)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
 position = Vector2(0, -1)
@@ -357,7 +366,6 @@ animation = &"water_up"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=212497309]
 zoom = Vector2(1.72, 1.72)
-position_smoothing_enabled = true
 position_smoothing_speed = 2.505
 
 [node name="gun" parent="." unique_id=143656072 instance=ExtResource("3_qhqgy")]
