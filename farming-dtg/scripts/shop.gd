@@ -56,5 +56,5 @@ func sell_carrots():
 		else:
 			print("No carrots to sell")
 
-	#fall back if my new sell code dosent work
- 	
+func buy_carrots():
+	pass
