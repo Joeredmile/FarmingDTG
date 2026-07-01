@@ -26,7 +26,8 @@ func _on_shoparea_body_exited(body):
 func _process(delta):
 	if player_in_shop and Input.is_action_just_pressed("interact"):
 		sell_carrots()
-
+	if player_in_shop and Input.is_action_just_pressed("buy"):
+		buy_carrots()
 
 
 #sells carots (I LOVE YOUTUBE)
@@ -40,7 +41,7 @@ func sell_carrots():
 				return
 			var removed: int = int(inv_ref.remove(CARROT_ITEM, want_to_sell))
 			if removed > 0:
-				GlobalData.coin_amount += removed
+				GlobalData.coin_amount += removed *2
 				GlobalData.carrot_amount -= removed
 				print("Sold", removed, "carrots")
 				print("Coins:", GlobalData.coin_amount)
@@ -54,7 +55,16 @@ func sell_carrots():
 			print("Coins:", GlobalData.coin_amount)
 			GlobalData.carrot_amount = 0
 		else:
-			print("No carrots to sell")
+			print("No carrots to sell") 
 
-	#fall back if my new sell code dosent work
- 	
+func buy_carrots():
+		if GlobalData.coin_amount > 0:
+			print("WORKS")
+			GlobalData.coin_amount - 1
+			GlobalData.carrot_seeds =+ 1
+			print("you own", GlobalData.carrot_seeds, "carrot seeds")
+			print("Coins:", GlobalData.coin_amount)
+		#GlobalData.coin_amount 
+		else:
+			print("bottom line")
+			

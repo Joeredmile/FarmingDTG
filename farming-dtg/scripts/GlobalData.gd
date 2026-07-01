@@ -6,3 +6,4 @@ extends Node
 var carrot_amount = 0
 var coin_amount = 0
 var collisons = false
+var carrot_seeds = 1
