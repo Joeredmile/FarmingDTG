@@ -30,8 +30,11 @@ enum {
 	MOVE
 }
 
+<<<<<<< Updated upstream
 var current_state = IDLE
 
+=======
+>>>>>>> Stashed changes
 func _ready():
 	randomize()
 	start_pos = position
