@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://do5rl8ihpbbfh"]
+
+[ext_resource type="Script" uid="uid://dro4rqsjg6nqo" path="res://scenes/shop.gd" id="1_xfvoa"]
+[ext_resource type="Texture2D" uid="uid://cv5heq3yf5hil" path="res://assets/Shop.png" id="2_xfvoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l46r"]
+size = Vector2(20.666668, 8.166665)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l46r"]
+atlas = ExtResource("2_xfvoa")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_032fp"]
+atlas = ExtResource("2_xfvoa")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fc2m"]
+atlas = ExtResource("2_xfvoa")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8r1wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l46r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_032fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fc2m")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfvoa"]
+size = Vector2(207, 136.5)
+
+[node name="shop" type="Node2D" unique_id=1824548626]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_xfvoa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=220046039]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1207656246]
+position = Vector2(-0.3333335, -4.583335)
+shape = SubResource("RectangleShape2D_1l46r")
+
+[node name="sellprompt" type="Label" parent="." unique_id=725201092]
+visible = false
+z_index = 144
+offset_top = -67.0
+offset_right = 61.0
+offset_bottom = -18.0
+text = "E to open shop
+
+"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1437898420]
+sprite_frames = SubResource("SpriteFrames_8r1wq")
+animation = &"shop"
+autoplay = "shop"
+
+[node name="shoparea" type="Area2D" parent="." unique_id=832876157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoparea" unique_id=280815005]
+position = Vector2(-3, 23.25)
+shape = SubResource("RectangleShape2D_xfvoa")
+
+[connection signal="body_entered" from="shoparea" to="." method="_on_shoparea_body_entered"]
+[connection signal="body_exited" from="shoparea" to="." method="_on_shoparea_body_exited"]

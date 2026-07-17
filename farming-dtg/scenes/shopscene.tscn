@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ps0fkwbf1u7r"]
+
+[ext_resource type="Texture2D" uid="uid://cgs12mgnace3y" path="res://assets/inventory-background.png" id="1_h4yij"]
+
+[node name="shopscene" type="Control" unique_id=1917038553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=90135288]
+layout_mode = 0
+offset_right = 654.0
+offset_bottom = 395.73834
+texture = ExtResource("1_h4yij")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=29408915]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 59.0
+offset_right = 632.0
+offset_bottom = 171.0
