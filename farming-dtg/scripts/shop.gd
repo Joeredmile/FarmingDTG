@@ -27,7 +27,7 @@ func _process(delta):
 	if player_in_shop and Input.is_action_just_pressed("interact"):
 		sell_carrots()
 	if player_in_shop and Input.is_action_just_pressed("buy"):
-		buy_carrots()
+		buy_seeds()
 
 
 #sells carots (I LOVE YOUTUBE)
@@ -57,14 +57,13 @@ func sell_carrots():
 		else:
 			print("No carrots to sell") 
 
-func buy_carrots():
-		if GlobalData.coin_amount > 0:
-			print("WORKS")
-			GlobalData.coin_amount - 1
-			GlobalData.carrot_seeds =+ 1
-			print("you own", GlobalData.carrot_seeds, "carrot seeds")
-			print("Coins:", GlobalData.coin_amount)
-		#GlobalData.coin_amount 
-		else:
-			print("bottom line")
-			
+
+# Give 1 seed per $1 and remove all coins
+func buy_seeds() -> void:
+	print("buy_carrots called. BEFORE -> Seeds:", GlobalData.carrot_seeds, "Coins:", GlobalData.coin_amount)
+	if int(GlobalData.coin_amount) <= 0:
+		print("Ur too brokie")
+		return
+	GlobalData.coin_amount -= 1
+	GlobalData.carrot_seeds += 1
+	print("buy_carrots finished. AFTER  -> Seeds:", GlobalData.carrot_seeds, "Coins:", GlobalData.coin_amount)

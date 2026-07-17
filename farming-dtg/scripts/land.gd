@@ -37,6 +37,7 @@ func plant_seed():
 	get_parent().add_child(carrot)
 	carrot.land_ref = self
 	planted = true
+	GlobalData.carrot_seeds -= 1
 	print("Planted a carrot! ", GlobalData.carrot_seeds ," remaining")
-	GlobalData.carrot_seeds =- 1
+	
 	

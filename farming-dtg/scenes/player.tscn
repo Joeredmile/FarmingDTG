@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vbsggi71fu0y" path="res://scenes/gun.tscn" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bfvmb78q1wwth" path="res://assets/Character watering (1).png" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://xl3wadgr6qax" path="res://assets/light.png" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(20, 74)
@@ -172,7 +173,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -186,7 +187,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -200,7 +201,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -214,7 +215,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -228,7 +229,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -248,7 +249,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -268,7 +269,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,7 +286,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -296,7 +297,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"water_down",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -307,7 +308,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"water_left",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -318,7 +319,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"water_right",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,13 +330,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"water_up",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=1248459986]
 z_index = 1
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="player_ui" type="Control" parent="." unique_id=485953845]
 z_index = 9
@@ -345,6 +350,7 @@ offset_left = -330.0
 offset_top = -180.0
 offset_right = -234.0
 offset_bottom = -140.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="player_ui" unique_id=1815409710]
 layout_mode = 0
@@ -352,11 +358,6 @@ offset_left = 3.0
 offset_top = 12.0
 offset_right = 143.0
 offset_bottom = 67.0
-text = "Print(\"Coins:\", GlobalData.coin_amount)"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055503155]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=148649698]
 position = Vector2(-9.536743e-07, -9.536743e-07)
@@ -378,5 +379,14 @@ offset_left = -43.0
 offset_top = -111.0
 offset_right = 42.0
 offset_bottom = -48.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1601121238]
+visible = false
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 50.0
+texture = ExtResource("7_fjrip")
+texture_scale = 0.6
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
