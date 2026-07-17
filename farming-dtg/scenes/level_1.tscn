@@ -269,6 +269,12 @@ position = Vector2(904, 196)
 [node name="light" parent="lights" unique_id=1012762706 instance=ExtResource("16_7nomh")]
 position = Vector2(904, 198)
 
+[node name="light2" parent="lights" unique_id=1821153259 instance=ExtResource("16_7nomh")]
+position = Vector2(94, 272)
+
+[node name="light3" parent="lights" unique_id=284997731 instance=ExtResource("16_7nomh")]
+position = Vector2(659, 274)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1873360795]
 color = Color(1, 1, 1, 0.93333334)
 script = ExtResource("17_1s4pk")

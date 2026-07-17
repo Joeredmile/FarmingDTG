@@ -3,6 +3,7 @@ extends Node2D
 @onready var shopscene: Shop = $"../player/shopscene"
 @onready var sellprompt: Label = $sellprompt
 @export var shopscene_path: NodePath
+@onready var timer: Timer = $Timer
 
 const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 
@@ -52,6 +53,8 @@ func _toggle_shop() -> void:
 			print("visible working")
 
 func _open_shop() -> void:
+	shopscene.player_ref = player_ref
+	shopscene.log_label.text = ""
 	shopscene.visible = true
 	#show mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

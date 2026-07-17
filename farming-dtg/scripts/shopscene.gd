@@ -5,6 +5,7 @@ const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 @export var sell_plant: PackedScene = preload("res://scenes/sellplant.tscn")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 var player_ref: Node = null
+@onready var log_label: Label = $Label
 
 
 func _ready() -> void:
@@ -23,13 +24,20 @@ func sell_carrots():
 		if inv_ref:
 			var want_to_sell: int = int(GlobalData.carrot_amount)
 			if want_to_sell <= 0:
-				print("No carrots to sell")
+				log_label.text = "Come back when you have something..."
+				$ResetTimer.start()
 				return
 			var removed: int = int(inv_ref.remove(CARROT_ITEM, want_to_sell))
 			if removed > 0:
 				GlobalData.coin_amount += removed *2
 				GlobalData.carrot_amount -= removed
-				print("Sold", removed, "carrots")
-				print("Coins:", GlobalData.coin_amount)
+				log_label.text = "Sold %d carrots" % removed
+				$ResetTimer.start()
+				log_label.text = "%s\nCoins: %d" % [log_label.text, GlobalData.coin_amount]
+				$ResetTimer.start()
 			else:
-				print("No carrots found in inventory")
+				log_label.text = "No carrots found in inventory"
+				$ResetTimer.start()
+
+func _on_reset_timer_timeout() -> void:
+	log_label.text = ""

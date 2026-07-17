@@ -35,7 +35,7 @@ offset_bottom = 354.0
 text = "Sell Carrots"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=235872044]
-position = Vector2(325, 194)
+position = Vector2(326, 194)
 scale = Vector2(4.6373696, 3.9820962)
 energy = 0.3
 texture = ExtResource("3_rqanf")
@@ -43,9 +43,13 @@ texture_scale = 0.6
 
 [node name="Label" type="Label" parent="." unique_id=1525001145]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 260.0
-offset_right = 579.2174
-offset_bottom = 332.0
+offset_left = 331.0
+offset_top = 346.0
+offset_right = 631.0
+offset_bottom = 369.0
+
+[node name="ResetTimer" type="Timer" parent="." unique_id=944967187]
+wait_time = 1.5
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
