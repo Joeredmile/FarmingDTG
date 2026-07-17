@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxj1eob3f45v"]
 
 [ext_resource type="Texture2D" uid="uid://b4r1ege86oika" path="res://assets/Carrot-4.png.png" id="1_qn4nt"]
-[ext_resource type="Script" uid="uid://dgtf1c0egcd0m" path="res://scenes/sellplant.gd" id="1_v36rp"]
+[ext_resource type="Script" uid="uid://dgtf1c0egcd0m" path="res://scripts/sellplant.gd" id="1_v36rp"]
 
 [node name="sellplant" type="Control" unique_id=722939000]
 layout_mode = 3
@@ -20,9 +20,9 @@ texture = ExtResource("1_qn4nt")
 
 [node name="Label" type="Label" parent="TextureRect" unique_id=1333183155]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 39.0
-offset_right = 65.0
-offset_bottom = 62.0
-text = "$2"
+offset_left = -21.0
+offset_top = 42.0
+offset_right = 93.0
+offset_bottom = 65.0
+text = "Carrot Seed $1"
 horizontal_alignment = 1

@@ -1,69 +1,68 @@
 extends Node2D
 
+@onready var shopscene: Shop = $"../player/shopscene"
 @onready var sellprompt: Label = $sellprompt
+@export var shopscene_path: NodePath
+
 const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
+
 var player_in_shop: bool = false
 var player_ref: Node = null
 
-#detects player
-func _on_shoparea_body_entered(body):
-	if body.name == "player":
+func _ready() -> void:
+	if shopscene_path != null and shopscene_path != NodePath(""):
+		shopscene = get_node_or_null(shopscene_path) as Control
+	if shopscene:
+		shopscene.visible = false
+	else:
+		push_warning("shopscene not found. Set shopscene_path in the Inspector to the UI instance in your main scene.")
+
+func _on_shoparea_body_entered(body: Node) -> void:
+	if body.is_in_group("player") or body.name == "player":
 		sellprompt.visible = true
 		player_in_shop = true
 		player_ref = body
 		print("Player entered shop, player_ref set:", player_ref)
 
-#detects player
-func _on_shoparea_body_exited(body):
-	if body.name == "player":
+func _on_shoparea_body_exited(body: Node) -> void:
+	if body.is_in_group("player") or body.name == "player":
 		sellprompt.visible = false
 		player_in_shop = false
 		player_ref = null
 		print("Player left shop, player_ref cleared")
+		#If UI is open and player walks away, close it
+		if shopscene and shopscene.visible:
+			_close_shop()
 
-
-#function for the input key
-func _process(delta):
+func _process(_delta: float) -> void:
 	if player_in_shop and Input.is_action_just_pressed("interact"):
-		sell_carrots()
-	if player_in_shop and Input.is_action_just_pressed("buy"):
-		buy_seeds()
+		_toggle_shop()
 
-
-#sells carots (I LOVE YOUTUBE)
-func sell_carrots():
-	if player_ref and player_ref.inv != null:
-		var inv_ref: Inv = player_ref.inv
-		if inv_ref:
-			var want_to_sell: int = int(GlobalData.carrot_amount)
-			if want_to_sell <= 0:
-				print("No carrots to sell")
-				return
-			var removed: int = int(inv_ref.remove(CARROT_ITEM, want_to_sell))
-			if removed > 0:
-				GlobalData.coin_amount += removed *2
-				GlobalData.carrot_amount -= removed
-				print("Sold", removed, "carrots")
-				print("Coins:", GlobalData.coin_amount)
-			else:
-				print("No carrots found in inventory")
-				pass
-	else:
-		if GlobalData.carrot_amount > 0:
-			GlobalData.coin_amount += GlobalData.carrot_amount
-			print("Sold", GlobalData.carrot_amount, "carrots")
-			print("Coins:", GlobalData.coin_amount)
-			GlobalData.carrot_amount = 0
-		else:
-			print("No carrots to sell") 
-
-
-# Give 1 seed per $1 and remove all coins
-func buy_seeds() -> void:
-	print("buy_carrots called. BEFORE -> Seeds:", GlobalData.carrot_seeds, "Coins:", GlobalData.coin_amount)
-	if int(GlobalData.coin_amount) <= 0:
-		print("Ur too brokie")
+#Toggle helpers
+func _toggle_shop() -> void:
+	if not shopscene:
 		return
-	GlobalData.coin_amount -= 1
-	GlobalData.carrot_seeds += 1
-	print("buy_carrots finished. AFTER  -> Seeds:", GlobalData.carrot_seeds, "Coins:", GlobalData.coin_amount)
+	if shopscene.visible:
+		_close_shop()
+		if shopscene.visible == false:
+			print("not visible working")
+	else:
+		_open_shop()
+		if shopscene.visible == true:
+			print("visible working")
+
+func _open_shop() -> void:
+	shopscene.visible = true
+	#show mouse
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var default_btn = shopscene.get_node_or_null("BuyButton")
+	if default_btn:
+		default_btn.grab_focus()
+	sellprompt.visible = false
+
+func _close_shop() -> void:
+	shopscene.visible = false
+	#get rid of mouse
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	sellprompt.visible = player_in_shop
+	
