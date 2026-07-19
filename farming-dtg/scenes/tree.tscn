@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuehhtgsthfu3"]
 
 [ext_resource type="Texture2D" uid="uid://rbjl5q7t6dtw" path="res://assets/trees but needs fix yet.png" id="1_avsvi"]
+[ext_resource type="Script" uid="uid://c6mujryw7yixn" path="res://scenes/tree.gd" id="2_vplca"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
 atlas = ExtResource("1_avsvi")
@@ -23,9 +24,12 @@ size = Vector2(82, 48)
 [node name="tree" type="AnimatedSprite2D" unique_id=1619515109]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_ict6q")
+script = ExtResource("2_vplca")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1678317459]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=380389289]
 position = Vector2(2, 53)
 shape = SubResource("RectangleShape2D_viusy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

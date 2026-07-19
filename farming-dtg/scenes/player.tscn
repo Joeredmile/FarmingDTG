@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bfvmb78q1wwth" path="res://assets/Character watering (1).png" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://xl3wadgr6qax" path="res://assets/light.png" id="7_fjrip"]
+[ext_resource type="PackedScene" uid="uid://taqwdb4ywctk" path="res://scenes/axe.tscn" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(20, 74)
@@ -388,5 +389,9 @@ shadow_filter = 1
 shadow_filter_smooth = 50.0
 texture = ExtResource("7_fjrip")
 texture_scale = 0.6
+
+[node name="axe" parent="." unique_id=1256663685 instance=ExtResource("8_smehm")]
+position = Vector2(26, 0)
+scale = Vector2(0.4, 0.059375)
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://taqwdb4ywctk"]
+
+[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="1_725vr"]
+[ext_resource type="Script" uid="uid://dogjbm4yaelfg" path="res://axe.gd" id="2_8s0ly"]
+
+[node name="axe" type="Sprite2D" unique_id=1256663685]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_725vr")
+script = ExtResource("2_8s0ly")
