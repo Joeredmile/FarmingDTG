@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ddmv3ggvs5hbp"]
+
+[ext_resource type="Script" uid="uid://b3uourbfloq1p" path="res://scripts/rabbit.gd" id="1_dxh4p"]
+[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="2_haj5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybw8e"]
+atlas = ExtResource("2_haj5u")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcyra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybw8e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxh4p"]
+size = Vector2(19, 19)
+
+[node name="rabbit" type="CharacterBody2D" unique_id=588397461]
+script = ExtResource("1_dxh4p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499493003]
+position = Vector2(-0.5000019, -0.5000019)
+scale = Vector2(0.16406249, 0.16406249)
+sprite_frames = SubResource("SpriteFrames_dcyra")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=659687177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2001504816]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_dxh4p")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

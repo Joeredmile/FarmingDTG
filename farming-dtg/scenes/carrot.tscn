@@ -102,12 +102,16 @@ offset_bottom = 23.0
 text = "Press F to water."
 
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
-wait_time = 0.405
+wait_time = 0.096
+one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=209017176]
-wait_time = 0.424
+wait_time = 0.625
+one_shot = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=552314641]
+wait_time = 0.38
+one_shot = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1914841187]
 

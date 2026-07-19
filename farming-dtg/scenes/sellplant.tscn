@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cxj1eob3f45v"]
+
+[ext_resource type="Texture2D" uid="uid://b4r1ege86oika" path="res://assets/Carrot-4.png.png" id="1_qn4nt"]
+[ext_resource type="Script" uid="uid://dgtf1c0egcd0m" path="res://scripts/sellplant.gd" id="1_v36rp"]
+
+[node name="sellplant" type="Control" unique_id=722939000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v36rp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1923389619]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qn4nt")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1333183155]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 42.0
+offset_right = 93.0
+offset_bottom = 65.0
+text = "Carrot Seed $1"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=968566711]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 290.0
+offset_right = 540.0
+offset_bottom = 313.0
+
+[node name="ResetTimer" type="Timer" parent="." unique_id=701409778]
+wait_time = 1.5
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
