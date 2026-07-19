@@ -16,8 +16,11 @@ func _process(delta: float) -> void:
 func shoot() -> void:
 	if not visible:
 		return
-	#bulletTimer.start()
-	var new_bullet = BULLET.instantiate()
-	new_bullet.position = marker_2d.global_position
-	new_bullet.target_position = (get_global_mouse_position() - marker_2d.global_position).normalized()
-	GlobalData.get_tree().current_scene.add_child(new_bullet)
+	if GlobalData.bullet_amount > 0:
+		#bulletTimer.start()
+		GlobalData.bullet_amount -= 1
+		var new_bullet = BULLET.instantiate()
+		new_bullet.position = marker_2d.global_position
+		new_bullet.target_position = (get_global_mouse_position() - marker_2d.global_position).normalized()
+		GlobalData.get_tree().current_scene.add_child(new_bullet)
+	

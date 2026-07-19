@@ -1,7 +1,9 @@
 extends Control
+
 class_name Shop
 
 const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
+@export var sell_bullet: PackedScene = preload("res://scenes/sellbullet.tscn")
 @export var sell_plant: PackedScene = preload("res://scenes/sellplant.tscn")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 var player_ref: Node = null
@@ -13,6 +15,9 @@ func _ready() -> void:
 	for i in range(1):
 		var sell_plant_instance = sell_plant.instantiate()
 		h_box_container.add_child(sell_plant_instance)
+		
+		var sell_bullet_instance = sell_bullet.instantiate()
+		h_box_container.add_child(sell_bullet_instance)
 
 func _on_button_pressed() -> void:
 	sell_carrots()

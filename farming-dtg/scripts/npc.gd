@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var dialog_label: Label = $DialogLabel
+
 const speed = 40
 
 var dir = Vector2.RIGHT
@@ -35,7 +37,9 @@ func _process(delta):
 			$AnimatedSprite2D.play("walk_n")
 		if dir.y == 1:
 			$AnimatedSprite2D.play("walk_s")
-	
+	if Input.is_action_just_pressed("interact") and player_in_chat_zone == true:
+		_chat()
+
 	if is_roaming:
 		match current_state:
 			IDLE:
@@ -68,3 +72,10 @@ func _on_timer_timeout() -> void:
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	current_state = choose([IDLE, NEW_DIR, MOVE])
 	$Timer.start()
+
+func _chat():
+	dialog_label.text = "I've missed you so much grandson!"
+	print("function working")
+	
+	
+	

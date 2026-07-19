@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bx47omwgerxst"]
+
+[ext_resource type="Script" uid="uid://cdolkfdfolbnu" path="res://scripts/rabbit_spawners.gd" id="1_k66if"]
+
+[node name="rabbit spawner" type="Node2D" unique_id=170633788]
+script = ExtResource("1_k66if")
+
+[node name="timer" type="Timer" parent="." unique_id=1917808606]
+wait_time = 0.128
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

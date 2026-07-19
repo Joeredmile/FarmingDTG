@@ -57,15 +57,15 @@ func _open_shop() -> void:
 	shopscene.log_label.text = ""
 	shopscene.visible = true
 	#show mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	var default_btn = shopscene.get_node_or_null("BuyButton")
-	if default_btn:
-		default_btn.grab_focus()
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#var default_btn = shopscene.get_node_or_null("BuyButton")
+	#if default_btn:
+	#	default_btn.grab_focus()
 	sellprompt.visible = false
 
 func _close_shop() -> void:
 	shopscene.visible = false
 	#get rid of mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	sellprompt.visible = player_in_shop
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#sellprompt.visible = player_in_shop
 	

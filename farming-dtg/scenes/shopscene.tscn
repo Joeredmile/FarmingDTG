@@ -25,6 +25,7 @@ offset_left = 24.0
 offset_top = 59.0
 offset_right = 632.0
 offset_bottom = 171.0
+theme_override_constants/separation = 122
 
 [node name="Button" type="Button" parent="." unique_id=1515485699]
 layout_mode = 0
@@ -35,7 +36,7 @@ offset_bottom = 354.0
 text = "Sell Carrots"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=235872044]
-position = Vector2(326, 194)
+position = Vector2(318, 194)
 scale = Vector2(4.6373696, 3.9820962)
 energy = 0.3
 texture = ExtResource("3_rqanf")
