@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cuehhtgsthfu3"]
+
+[ext_resource type="Texture2D" uid="uid://rbjl5q7t6dtw" path="res://assets/trees but needs fix yet.png" id="1_avsvi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
+atlas = ExtResource("1_avsvi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ict6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vplca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viusy"]
+size = Vector2(82, 48)
+
+[node name="tree" type="AnimatedSprite2D" unique_id=1619515109]
+z_index = 5
+sprite_frames = SubResource("SpriteFrames_ict6q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1678317459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=380389289]
+position = Vector2(2, 53)
+shape = SubResource("RectangleShape2D_viusy")

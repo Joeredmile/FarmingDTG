@@ -15,11 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://dt782bifyje03" path="res://assets/test grass level (2).png" id="8_2aecg"]
 [ext_resource type="Texture2D" uid="uid://bd3k46l8u6h46" path="res://assets/DIrt patch with grass corners.png" id="9_7gny6"]
 [ext_resource type="Texture2D" uid="uid://c6gmou2c4mwdr" path="res://assets/DIrt patch with grass corners (1).png" id="11_7nomh"]
-[ext_resource type="PackedScene" uid="uid://ps0fkwbf1u7r" path="res://scenes/shopscene.tscn" id="13_x2xxo"]
-[ext_resource type="PackedScene" uid="uid://ddqtje88s7kfv" path="res://scenes/light.tscn" id="16_7nomh"]
+[ext_resource type="PackedScene" path="res://scenes/shopscene.tscn" id="13_x2xxo"]
+[ext_resource type="PackedScene" path="res://scenes/light.tscn" id="16_7nomh"]
 [ext_resource type="Script" uid="uid://dfvdp53ehpvsp" path="res://scripts/daynightcycle.gd" id="17_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://ddmv3ggvs5hbp" path="res://scenes/rabbit.tscn" id="19_2cbcq"]
-[ext_resource type="PackedScene" uid="uid://bx47omwgerxst" path="res://scenes/rabbit_spawner.tscn" id="20_isj1j"]
+[ext_resource type="PackedScene" path="res://scenes/rabbit_spawner.tscn" id="20_isj1j"]
+[ext_resource type="PackedScene" uid="uid://cuehhtgsthfu3" path="res://scenes/tree.tscn" id="21_so66j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("1_014kd")
@@ -280,3 +281,422 @@ position = Vector2(445, 102)
 
 [node name="rabbit spawners" parent="." unique_id=170633788 instance=ExtResource("20_isj1j")]
 position = Vector2(43, 402)
+
+[node name="Node" type="Node" parent="." unique_id=400579679]
+
+[node name="tree" parent="Node" unique_id=1619515109 instance=ExtResource("21_so66j")]
+position = Vector2(-241, 1859)
+
+[node name="tree14" parent="Node" unique_id=294472315 instance=ExtResource("21_so66j")]
+position = Vector2(1106, 1751)
+
+[node name="tree39" parent="Node" unique_id=633330805 instance=ExtResource("21_so66j")]
+position = Vector2(637, 1731)
+
+[node name="tree40" parent="Node" unique_id=22221976 instance=ExtResource("21_so66j")]
+position = Vector2(-73, 1698)
+
+[node name="tree8" parent="Node" unique_id=934006073 instance=ExtResource("21_so66j")]
+position = Vector2(557, 1695)
+
+[node name="tree9" parent="Node" unique_id=1632204098 instance=ExtResource("21_so66j")]
+position = Vector2(-157, 1684)
+
+[node name="tree10" parent="Node" unique_id=204021436 instance=ExtResource("21_so66j")]
+position = Vector2(411, 1735)
+
+[node name="tree11" parent="Node" unique_id=695653727 instance=ExtResource("21_so66j")]
+position = Vector2(97, 1707)
+
+[node name="tree12" parent="Node" unique_id=566562828 instance=ExtResource("21_so66j")]
+position = Vector2(918, -95)
+
+[node name="tree15" parent="Node" unique_id=1025985111 instance=ExtResource("21_so66j")]
+position = Vector2(755, 393)
+
+[node name="tree13" parent="Node" unique_id=44695270 instance=ExtResource("21_so66j")]
+position = Vector2(117, 670)
+
+[node name="tree2" parent="Node" unique_id=895277810 instance=ExtResource("21_so66j")]
+position = Vector2(69, 1974)
+
+[node name="tree3" parent="Node" unique_id=2126634850 instance=ExtResource("21_so66j")]
+position = Vector2(463, 1818)
+
+[node name="tree4" parent="Node" unique_id=2042838775 instance=ExtResource("21_so66j")]
+position = Vector2(16, 1702)
+
+[node name="tree25" parent="Node" unique_id=542360180 instance=ExtResource("21_so66j")]
+position = Vector2(244, 1747)
+
+[node name="tree17" parent="Node" unique_id=469645516 instance=ExtResource("21_so66j")]
+position = Vector2(-310, 1685)
+
+[node name="tree18" parent="Node" unique_id=1324231842 instance=ExtResource("21_so66j")]
+position = Vector2(303, 1815)
+
+[node name="tree19" parent="Node" unique_id=53715845 instance=ExtResource("21_so66j")]
+position = Vector2(95, 1877)
+
+[node name="tree20" parent="Node" unique_id=462238669 instance=ExtResource("21_so66j")]
+position = Vector2(222, 1802)
+
+[node name="tree21" parent="Node" unique_id=1568828312 instance=ExtResource("21_so66j")]
+position = Vector2(-78, 1791)
+
+[node name="tree22" parent="Node" unique_id=266454156 instance=ExtResource("21_so66j")]
+position = Vector2(166, 1705)
+
+[node name="tree24" parent="Node" unique_id=1595134334 instance=ExtResource("21_so66j")]
+position = Vector2(-328, 1802)
+
+[node name="tree26" parent="Node" unique_id=1938132823 instance=ExtResource("21_so66j")]
+position = Vector2(-314, 1918)
+
+[node name="tree27" parent="Node" unique_id=1240906820 instance=ExtResource("21_so66j")]
+position = Vector2(30, 1789)
+
+[node name="tree28" parent="Node" unique_id=324049573 instance=ExtResource("21_so66j")]
+position = Vector2(311, 1865)
+
+[node name="tree29" parent="Node" unique_id=439881889 instance=ExtResource("21_so66j")]
+position = Vector2(545, 1825)
+
+[node name="tree43" parent="Node" unique_id=2054765167 instance=ExtResource("21_so66j")]
+position = Vector2(628, 1827)
+
+[node name="tree44" parent="Node" unique_id=418137878 instance=ExtResource("21_so66j")]
+position = Vector2(710, 1835)
+
+[node name="tree46" parent="Node" unique_id=1553547466 instance=ExtResource("21_so66j")]
+position = Vector2(545, 1897)
+
+[node name="tree48" parent="Node" unique_id=148329615 instance=ExtResource("21_so66j")]
+position = Vector2(413, 1912)
+
+[node name="tree49" parent="Node" unique_id=663933253 instance=ExtResource("21_so66j")]
+position = Vector2(385, 1871)
+
+[node name="tree51" parent="Node" unique_id=1240590728 instance=ExtResource("21_so66j")]
+position = Vector2(235, 1894)
+
+[node name="tree52" parent="Node" unique_id=1267099998 instance=ExtResource("21_so66j")]
+position = Vector2(158, 1918)
+
+[node name="tree30" parent="Node" unique_id=969681927 instance=ExtResource("21_so66j")]
+position = Vector2(1181, 1731)
+
+[node name="tree36" parent="Node" unique_id=1431722907 instance=ExtResource("21_so66j")]
+position = Vector2(-241, 1755)
+
+[node name="tree31" parent="Node" unique_id=1173621825 instance=ExtResource("21_so66j")]
+position = Vector2(499, 1725)
+
+[node name="tree32" parent="Node" unique_id=837616061 instance=ExtResource("21_so66j")]
+position = Vector2(335, 1743)
+
+[node name="tree33" parent="Node" unique_id=682676948 instance=ExtResource("21_so66j")]
+position = Vector2(377, 1803)
+
+[node name="tree34" parent="Node" unique_id=670840328 instance=ExtResource("21_so66j")]
+position = Vector2(142, 1799)
+
+[node name="tree35" parent="Node" unique_id=589721260 instance=ExtResource("21_so66j")]
+position = Vector2(235, 1945)
+
+[node name="tree54" parent="Node" unique_id=1820687424 instance=ExtResource("21_so66j")]
+position = Vector2(-75, 1894)
+
+[node name="tree55" parent="Node" unique_id=96167949 instance=ExtResource("21_so66j")]
+position = Vector2(10, 1905)
+
+[node name="tree57" parent="Node" unique_id=211313711 instance=ExtResource("21_so66j")]
+position = Vector2(-151, 1940)
+
+[node name="tree56" parent="Node" unique_id=742125672 instance=ExtResource("21_so66j")]
+position = Vector2(-87.00001, 1976)
+rotation = 0.031039964
+
+[node name="tree58" parent="Node" unique_id=653632918 instance=ExtResource("21_so66j")]
+position = Vector2(718.0001, 1476.9998)
+rotation = 0.031039964
+
+[node name="tree60" parent="Node" unique_id=1878951148 instance=ExtResource("21_so66j")]
+position = Vector2(1059.0001, 1304)
+rotation = 0.031039964
+
+[node name="tree67" parent="Node" unique_id=602897483 instance=ExtResource("21_so66j")]
+position = Vector2(-287.00024, 1480.9999)
+rotation = 0.031039964
+
+[node name="tree73" parent="Node" unique_id=696301724 instance=ExtResource("21_so66j")]
+position = Vector2(-229, 908.99994)
+rotation = 0.031039964
+
+[node name="tree59" parent="Node" unique_id=1436517945 instance=ExtResource("21_so66j")]
+position = Vector2(-234.99998, 1981.9999)
+rotation = 0.031039964
+
+[node name="tree37" parent="Node" unique_id=1991364815 instance=ExtResource("21_so66j")]
+position = Vector2(-156, 1787)
+
+[node name="tree38" parent="Node" unique_id=368591845 instance=ExtResource("21_so66j")]
+position = Vector2(714, 1728)
+
+[node name="tree16" parent="Node" unique_id=2090389582 instance=ExtResource("21_so66j")]
+position = Vector2(-309, 2005)
+
+[node name="tree61" parent="Node" unique_id=1247058470 instance=ExtResource("21_so66j")]
+position = Vector2(-156, 2021)
+
+[node name="tree62" parent="Node" unique_id=98082951 instance=ExtResource("21_so66j")]
+position = Vector2(-328, 2079)
+
+[node name="tree63" parent="Node" unique_id=1909413972 instance=ExtResource("21_so66j")]
+position = Vector2(-272, 2104)
+
+[node name="tree64" parent="Node" unique_id=1682667740 instance=ExtResource("21_so66j")]
+position = Vector2(-332, 2167)
+
+[node name="tree65" parent="Node" unique_id=771202376 instance=ExtResource("21_so66j")]
+position = Vector2(-274, 2198)
+
+[node name="tree66" parent="Node" unique_id=1398067792 instance=ExtResource("21_so66j")]
+position = Vector2(-208, 2111)
+
+[node name="tree68" parent="Node" unique_id=233094011 instance=ExtResource("21_so66j")]
+position = Vector2(-133, 2120)
+
+[node name="tree69" parent="Node" unique_id=1194774181 instance=ExtResource("21_so66j")]
+position = Vector2(-139, 2222)
+
+[node name="tree6" parent="Node" unique_id=868076493 instance=ExtResource("21_so66j")]
+position = Vector2(29, 2059)
+
+[node name="tree7" parent="Node" unique_id=29328058 instance=ExtResource("21_so66j")]
+position = Vector2(-155, 1865)
+
+[node name="tree41" parent="Node" unique_id=374058447 instance=ExtResource("21_so66j")]
+position = Vector2(-49, 2240)
+
+[node name="tree70" parent="Node" unique_id=1799297828 instance=ExtResource("21_so66j")]
+position = Vector2(-22, 1976)
+
+[node name="tree71" parent="Node" unique_id=1111753685 instance=ExtResource("21_so66j")]
+position = Vector2(-60, 2103)
+
+[node name="tree72" parent="Node" unique_id=2016999016 instance=ExtResource("21_so66j")]
+position = Vector2(3, 2163.9998)
+rotation = -0.00078926585
+
+[node name="tree74" parent="Node" unique_id=1311438054 instance=ExtResource("21_so66j")]
+position = Vector2(107, 2154.9998)
+rotation = -0.00078926585
+
+[node name="tree75" parent="Node" unique_id=1905042537 instance=ExtResource("21_so66j")]
+position = Vector2(62.000008, 2260)
+rotation = -0.00078926585
+
+[node name="tree76" parent="Node" unique_id=1743975700 instance=ExtResource("21_so66j")]
+position = Vector2(113, 2049.9998)
+rotation = -0.00078926585
+
+[node name="tree77" parent="Node" unique_id=1399659000 instance=ExtResource("21_so66j")]
+position = Vector2(202.00002, 2023)
+rotation = -0.00078926585
+
+[node name="tree78" parent="Node" unique_id=2070381800 instance=ExtResource("21_so66j")]
+position = Vector2(176.00002, 2195)
+rotation = -0.00078926585
+
+[node name="tree79" parent="Node" unique_id=1529218644 instance=ExtResource("21_so66j")]
+position = Vector2(139.00002, 2236)
+rotation = -0.00078926585
+
+[node name="tree80" parent="Node" unique_id=1992801160 instance=ExtResource("21_so66j")]
+position = Vector2(212, 2096)
+rotation = -0.00078926585
+
+[node name="tree81" parent="Node" unique_id=910364095 instance=ExtResource("21_so66j")]
+position = Vector2(291, 2098.9998)
+rotation = -0.00078926585
+
+[node name="tree102" parent="Node" unique_id=1404599752 instance=ExtResource("21_so66j")]
+position = Vector2(385, 2097)
+rotation = -0.00078926585
+
+[node name="tree109" parent="Node" unique_id=1140152073 instance=ExtResource("21_so66j")]
+position = Vector2(490, 2090)
+rotation = -0.00078926585
+
+[node name="tree110" parent="Node" unique_id=2064390503 instance=ExtResource("21_so66j")]
+position = Vector2(613, 2102.9998)
+rotation = -0.00078926585
+
+[node name="tree111" parent="Node" unique_id=1132561989 instance=ExtResource("21_so66j")]
+position = Vector2(716, 2094)
+rotation = -0.00078926585
+
+[node name="tree112" parent="Node" unique_id=1282338973 instance=ExtResource("21_so66j")]
+position = Vector2(819.0001, 2120)
+rotation = -0.00078926585
+
+[node name="tree113" parent="Node" unique_id=1157310423 instance=ExtResource("21_so66j")]
+position = Vector2(891.00006, 2136)
+rotation = -0.00078926585
+
+[node name="tree114" parent="Node" unique_id=486869732 instance=ExtResource("21_so66j")]
+position = Vector2(883.00006, 2189.9998)
+rotation = -0.00078926585
+
+[node name="tree115" parent="Node" unique_id=2021387256 instance=ExtResource("21_so66j")]
+position = Vector2(792.00006, 2173)
+rotation = -0.00078926585
+
+[node name="tree116" parent="Node" unique_id=1717010435 instance=ExtResource("21_so66j")]
+position = Vector2(692, 2167.9998)
+rotation = -0.00078926585
+
+[node name="tree117" parent="Node" unique_id=632605033 instance=ExtResource("21_so66j")]
+position = Vector2(568.00006, 2164.9998)
+rotation = -0.00078926585
+
+[node name="tree118" parent="Node" unique_id=1669412286 instance=ExtResource("21_so66j")]
+position = Vector2(444, 2162.9998)
+rotation = -0.00078926585
+
+[node name="tree119" parent="Node" unique_id=2068649538 instance=ExtResource("21_so66j")]
+position = Vector2(363.00003, 2163.9998)
+rotation = -0.00078926585
+
+[node name="tree120" parent="Node" unique_id=701003021 instance=ExtResource("21_so66j")]
+position = Vector2(364.99997, 2246)
+rotation = -0.00078926585
+
+[node name="tree121" parent="Node" unique_id=430473466 instance=ExtResource("21_so66j")]
+position = Vector2(455.99997, 2240)
+rotation = -0.00078926585
+
+[node name="tree122" parent="Node" unique_id=2024847662 instance=ExtResource("21_so66j")]
+position = Vector2(569.00006, 2233)
+rotation = -0.00078926585
+
+[node name="tree123" parent="Node" unique_id=682063928 instance=ExtResource("21_so66j")]
+position = Vector2(662.99994, 2229.9998)
+rotation = -0.00078926585
+
+[node name="tree124" parent="Node" unique_id=1660328392 instance=ExtResource("21_so66j")]
+position = Vector2(772.00006, 2227.9998)
+rotation = -0.00078926585
+
+[node name="tree125" parent="Node" unique_id=338325351 instance=ExtResource("21_so66j")]
+position = Vector2(920, 2239)
+rotation = -0.00078926585
+
+[node name="tree126" parent="Node" unique_id=769850383 instance=ExtResource("21_so66j")]
+position = Vector2(920, 2239)
+rotation = -0.00078926585
+
+[node name="tree82" parent="Node" unique_id=623445126 instance=ExtResource("21_so66j")]
+position = Vector2(250, 2173)
+rotation = -0.00078926585
+
+[node name="tree89" parent="Node" unique_id=397110285 instance=ExtResource("21_so66j")]
+position = Vector2(287, 2244.9998)
+rotation = -0.00078926585
+
+[node name="tree83" parent="Node" unique_id=278517455 instance=ExtResource("21_so66j")]
+position = Vector2(300, 2020)
+rotation = -0.00078926585
+
+[node name="tree84" parent="Node" unique_id=869576865 instance=ExtResource("21_so66j")]
+position = Vector2(394, 2005.0001)
+rotation = -0.00078926585
+
+[node name="tree85" parent="Node" unique_id=583209053 instance=ExtResource("21_so66j")]
+position = Vector2(496, 1992)
+rotation = -0.00078926585
+
+[node name="tree86" parent="Node" unique_id=2126175373 instance=ExtResource("21_so66j")]
+position = Vector2(584, 2003)
+rotation = -0.00078926585
+
+[node name="tree87" parent="Node" unique_id=777691146 instance=ExtResource("21_so66j")]
+position = Vector2(646, 2004)
+rotation = -0.00078926585
+
+[node name="tree88" parent="Node" unique_id=1783193204 instance=ExtResource("21_so66j")]
+position = Vector2(1105.9999, 1802.0002)
+rotation = -0.00078926585
+
+[node name="tree97" parent="Node" unique_id=295296042 instance=ExtResource("21_so66j")]
+position = Vector2(1176, 1800.0001)
+rotation = -0.00078926585
+
+[node name="tree98" parent="Node" unique_id=1421545340 instance=ExtResource("21_so66j")]
+position = Vector2(1166, 1845.0002)
+rotation = -0.00078926585
+
+[node name="tree99" parent="Node" unique_id=499695980 instance=ExtResource("21_so66j")]
+position = Vector2(1172, 1921.9999)
+rotation = -0.00078926585
+
+[node name="tree100" parent="Node" unique_id=157342531 instance=ExtResource("21_so66j")]
+position = Vector2(1154, 1973)
+rotation = -0.00078926585
+
+[node name="tree101" parent="Node" unique_id=1174238240 instance=ExtResource("21_so66j")]
+position = Vector2(1171, 2024)
+rotation = -0.00078926585
+
+[node name="tree103" parent="Node" unique_id=1287423118 instance=ExtResource("21_so66j")]
+position = Vector2(1158, 2132)
+rotation = -0.00078926585
+
+[node name="tree104" parent="Node" unique_id=295125128 instance=ExtResource("21_so66j")]
+position = Vector2(1170, 2188)
+rotation = -0.00078926585
+
+[node name="tree105" parent="Node" unique_id=1075337551 instance=ExtResource("21_so66j")]
+position = Vector2(1171, 2241.9998)
+rotation = -0.00078926585
+
+[node name="tree106" parent="Node" unique_id=684818729 instance=ExtResource("21_so66j")]
+position = Vector2(987, 2058)
+rotation = -0.00078926585
+
+[node name="tree107" parent="Node" unique_id=905082224 instance=ExtResource("21_so66j")]
+position = Vector2(983, 2133.9998)
+rotation = -0.00078926585
+
+[node name="tree108" parent="Node" unique_id=1494594974 instance=ExtResource("21_so66j")]
+position = Vector2(980, 2179)
+rotation = -0.00078926585
+
+[node name="tree90" parent="Node" unique_id=1004207626 instance=ExtResource("21_so66j")]
+position = Vector2(1112, 1903.9999)
+rotation = -0.00078926585
+
+[node name="tree91" parent="Node" unique_id=978456476 instance=ExtResource("21_so66j")]
+position = Vector2(1062.9999, 1977)
+rotation = -0.00078926585
+
+[node name="tree92" parent="Node" unique_id=67526560 instance=ExtResource("21_so66j")]
+position = Vector2(1098.9999, 2040)
+rotation = -0.00078926585
+
+[node name="tree93" parent="Node" unique_id=1721556367 instance=ExtResource("21_so66j")]
+position = Vector2(1088, 2102)
+rotation = -0.00078926585
+
+[node name="tree94" parent="Node" unique_id=694810305 instance=ExtResource("21_so66j")]
+position = Vector2(1071.9999, 2160.9998)
+rotation = -0.00078926585
+
+[node name="tree95" parent="Node" unique_id=324546851 instance=ExtResource("21_so66j")]
+position = Vector2(1084, 2237)
+rotation = -0.00078926585
+
+[node name="tree96" parent="Node" unique_id=1917067134 instance=ExtResource("21_so66j")]
+position = Vector2(1084, 2237)
+rotation = -0.00078926585
