@@ -6,4 +6,5 @@
 [node name="axe" type="Sprite2D" unique_id=1256663685]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_725vr")
+offset = Vector2(64, 0)
 script = ExtResource("2_8s0ly")

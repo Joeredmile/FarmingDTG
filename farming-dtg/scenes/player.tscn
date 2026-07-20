@@ -391,7 +391,6 @@ texture = ExtResource("7_fjrip")
 texture_scale = 0.6
 
 [node name="axe" parent="." unique_id=1256663685 instance=ExtResource("8_smehm")]
-position = Vector2(26, 0)
-scale = Vector2(0.4, 0.059375)
+scale = Vector2(0.6171875, 0.059375)
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

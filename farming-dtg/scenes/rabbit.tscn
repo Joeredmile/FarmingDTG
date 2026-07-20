@@ -1,39 +1,87 @@
 [gd_scene format=3 uid="uid://ddmv3ggvs5hbp"]
 
 [ext_resource type="Script" uid="uid://b3uourbfloq1p" path="res://scripts/rabbit.gd" id="1_dxh4p"]
-[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="2_haj5u"]
+[ext_resource type="Texture2D" uid="uid://dugvueq6i1mlr" path="res://assets/bunny.png" id="2_dxh4p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxh4p"]
+atlas = ExtResource("2_dxh4p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haj5u"]
+atlas = ExtResource("2_dxh4p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukfwh"]
+atlas = ExtResource("2_dxh4p")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ybw8e"]
-atlas = ExtResource("2_haj5u")
-region = Rect2(0, 0, 128, 128)
+atlas = ExtResource("2_dxh4p")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcyra"]
+atlas = ExtResource("2_dxh4p")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k4km"]
+atlas = ExtResource("2_dxh4p")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcyra"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ybw8e")
+"texture": SubResource("AtlasTexture_dxh4p")
 }],
 "loop": true,
-"name": &"default",
+"name": &"dead",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haj5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukfwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybw8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcyra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k4km")
+}],
+"loop": true,
+"name": &"move",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxh4p"]
-size = Vector2(19, 19)
+size = Vector2(22, 22)
 
 [node name="rabbit" type="CharacterBody2D" unique_id=588397461]
+z_index = 1
 script = ExtResource("1_dxh4p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499493003]
 position = Vector2(-0.5000019, -0.5000019)
-scale = Vector2(0.16406249, 0.16406249)
+scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_dcyra")
+animation = &"dead"
+autoplay = "move"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=659687177]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2001504816]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_dxh4p")
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
+[node name="Timer" type="Timer" parent="." unique_id=1235248362]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1425059992]
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
