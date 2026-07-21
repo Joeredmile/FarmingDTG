@@ -15,6 +15,10 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
+		can_break = true
+		break_tree()
+		
+func break_tree():
 		if Input.is_action_pressed("interact"):
 			queue_free()
 	

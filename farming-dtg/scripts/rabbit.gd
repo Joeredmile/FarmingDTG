@@ -7,7 +7,6 @@ const DEAD_COLOR = Color("#000000")
 var SPEED = 100.0
 @onready var timer: Timer = $Timer
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
-var direction = (player.global_position - global_position).normalized()
 
 
 func _physics_process(delta: float) -> void:
@@ -21,7 +20,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.name == "bullet":
-		if direction.x < 0:
 			canvas_modulate.color = Color.WHITE
 			var tween = create_tween()
 			tween.tween_property(canvas_modulate, "color", Color.BLACK, 3)
