@@ -8,3 +8,8 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_725vr")
 offset = Vector2(64, 0)
 script = ExtResource("2_8s0ly")
+
+[node name="Timer" type="Timer" parent="." unique_id=500991038]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

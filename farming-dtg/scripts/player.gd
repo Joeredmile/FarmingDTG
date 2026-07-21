@@ -73,13 +73,6 @@ func play_animation(dir: Vector2) -> void:
 
 
 
-func _unhandled_input(event):
-	if event.is_action_pressed("hold_gun"):
-		$gun.show()
-	if event.is_action_pressed("no_hold_gun"):
-		$gun.hide()
-	else:
-		pass
 #shooting cooldown
 func _on_timer_timeout() -> void:
 	shoot_cooldown = true
