@@ -16,5 +16,16 @@ script = ExtResource("2_cthhe")
 position = Vector2(2.5, 5)
 shape = SubResource("RectangleShape2D_84fu1")
 
+[node name="interactionslabel" type="Label" parent="." unique_id=1425353218]
+z_index = 51
+offset_left = -167.0
+offset_top = -25.0
+offset_right = -46.0
+offset_bottom = -2.0
+
+[node name="resettimer" type="Timer" parent="." unique_id=1628298299]
+wait_time = 0.5
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="resettimer" to="." method="_on_resettimer_timeout"]

@@ -9,7 +9,6 @@ const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 var player_ref: Node = null
 @onready var log_label: Label = $Label
 
-
 func _ready() -> void:
 	#creates sell cards
 	for i in range(1):

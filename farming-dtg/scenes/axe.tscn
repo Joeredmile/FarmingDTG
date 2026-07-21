@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://taqwdb4ywctk"]
 
-[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="1_725vr"]
+[ext_resource type="Texture2D" uid="uid://dll3fuvhagd7q" path="res://assets/axe rotated.png" id="1_725vr"]
 [ext_resource type="Script" uid="uid://dogjbm4yaelfg" path="res://scripts/axe.gd" id="2_8s0ly"]
 
 [node name="axe" type="Sprite2D" unique_id=1256663685]
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_725vr")
-offset = Vector2(64, 0)
+offset = Vector2(11, 0)
 script = ExtResource("2_8s0ly")
 
 [node name="Timer" type="Timer" parent="." unique_id=500991038]

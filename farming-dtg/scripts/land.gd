@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @export var carrot_scene: PackedScene = preload("res://scenes/carrot.tscn")
+@onready var interactions_label: Label = $interactionslabel
+@onready var resettimer: Timer = $resettimer
 
 var planted = false
 var player_in_patch = false
@@ -30,7 +32,8 @@ func reset_patch():
 #plants seed
 func plant_seed():
 	if planted:
-		print("Already planted here")
+		interactions_label.text = "Already planted here"
+		$resettimer.start()
 		return
 	var carrot = carrot_scene.instantiate()
 	carrot.position = self.global_position
@@ -38,6 +41,10 @@ func plant_seed():
 	carrot.land_ref = self
 	planted = true
 	GlobalData.carrot_seeds -= 1
-	print("Planted a carrot! ", GlobalData.carrot_seeds ," remaining")
-	
-	
+	interactions_label.text = "Planted a carrot!"
+	$resettimer.start()
+
+
+
+func _on_resettimer_timeout() -> void:
+		interactions_label.text = ""

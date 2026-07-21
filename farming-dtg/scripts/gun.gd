@@ -9,12 +9,13 @@ var can_equip = true
 func _input(event):
 	if event.is_action_pressed("hold_gun") and can_equip == true:
 		visible = not visible
-		print("workings")
 		equiptimer.start()
 		can_equip = false
+
 	
 func _on_timer_timeout() -> void:
 	can_equip = true
+
 	
 
 func _process(delta: float) -> void:

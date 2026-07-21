@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@onready var carrot: AnimatedSprite2D = $".."
+#@onready var carrot: AnimatedSprite2D = $"../carrot"
 const DEAD_COLOR = Color("#000000")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../player"
@@ -11,8 +11,9 @@ var SPEED = 100.0
 
 
 func _physics_process(delta: float) -> void:
+	if player == null: return
 	#where is the player
-	var direction = (carrot.global_position - global_position).normalized()
+	var direction = (player.global_position - global_position).normalized()
 	velocity = direction * SPEED
 	move_and_slide()
 	if direction.x != 0:

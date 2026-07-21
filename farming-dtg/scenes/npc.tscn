@@ -223,6 +223,9 @@ offset_top = -75.0
 offset_right = -2.0
 offset_bottom = -52.0
 
+[node name="resettimer" type="Timer" parent="." unique_id=248064194]
+
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="resettimer" to="." method="_on_resettimer_timeout"]

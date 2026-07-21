@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var dialog_label: Label = $DialogLabel
+@onready var resettimer: Timer = $resettimer
+var chat_variants = ["I've missed you so much grandson!",
+ "Press E to interact!", "I for inventory!", "so excited your here boy!"]
 
 const speed = 40
 
@@ -74,8 +77,10 @@ func _on_timer_timeout() -> void:
 	$Timer.start()
 
 func _chat():
-	dialog_label.text = "I've missed you so much grandson!"
-	print("function working")
+	dialog_label.text = chat_variants.pick_random()
+	$resettimer.start()
 	
 	
-	
+
+func _on_resettimer_timeout() -> void:
+	dialog_label.text = ""

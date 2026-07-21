@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $timer
 @export var rabbit: PackedScene = preload("res://scenes/rabbit.tscn")
 @export var bullet: PackedScene = preload("res://scenes/bullet.tscn")
@@ -9,7 +10,6 @@ const NIGHT_COLOR = Color("#0b213fff")
 var new_rabbit = null
 @onready var canvas_modulate: CanvasModulate = $"../CanvasModulate"
 
-#JOE THIS IS PAST YOU PLEASE FIX THIS
 
 func _ready() -> void:
 	if not player:

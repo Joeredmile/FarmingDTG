@@ -54,8 +54,6 @@ func _process(delta: float) -> void:
 			print(GlobalData.carrot_amount)
 			if land_ref:
 				land_ref.reset_patch()
-			else:
-				print("ERROR: land_ref is NULL")
 			queue_free()
 	
 
