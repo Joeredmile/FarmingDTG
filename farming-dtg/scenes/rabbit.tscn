@@ -76,6 +76,7 @@ autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2001504816]
 position = Vector2(-1, 0)
+rotation = 0.008726646
 shape = SubResource("RectangleShape2D_dxh4p")
 
 [node name="Timer" type="Timer" parent="." unique_id=1235248362]

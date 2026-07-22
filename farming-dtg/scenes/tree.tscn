@@ -22,6 +22,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viusy"]
 size = Vector2(82, 68)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd6xs"]
+size = Vector2(25, 15)
+
 [node name="tree" type="AnimatedSprite2D" unique_id=1619515109]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_ict6q")
@@ -33,6 +36,19 @@ item = ExtResource("3_viusy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=380389289]
 position = Vector2(2, 43)
 shape = SubResource("RectangleShape2D_viusy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=961722083]
+
+[node name="block" type="CollisionShape2D" parent="StaticBody2D" unique_id=2116813463]
+position = Vector2(-2, 50)
+shape = SubResource("RectangleShape2D_qd6xs")
+one_way_collision = true
+
+[node name="block2" type="CollisionShape2D" parent="StaticBody2D" unique_id=847244260]
+position = Vector2(-1, 32)
+rotation = -3.1415927
+shape = SubResource("RectangleShape2D_qd6xs")
+one_way_collision = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

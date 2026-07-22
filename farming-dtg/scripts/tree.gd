@@ -5,6 +5,7 @@ var can_break = false
 const axe = preload("uid://taqwdb4ywctk")
 var inside_tree_area2d = false
 @export var item: InvItem
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 func _ready() -> void:
 	pass
