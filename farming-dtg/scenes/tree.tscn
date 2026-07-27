@@ -1,22 +1,43 @@
 [gd_scene format=3 uid="uid://cuehhtgsthfu3"]
 
-[ext_resource type="Texture2D" uid="uid://rbjl5q7t6dtw" path="res://assets/trees but needs fix yet.png" id="1_avsvi"]
+[ext_resource type="Texture2D" uid="uid://3mntqcj8ffaj" path="res://assets/trees.png" id="1_viusy"]
 [ext_resource type="Script" uid="uid://c6mujryw7yixn" path="res://scripts/tree.gd" id="2_vplca"]
 [ext_resource type="Resource" uid="uid://cum07m681v3o4" path="res://inventory/items/wood.tres" id="3_viusy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
-atlas = ExtResource("1_avsvi")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd6xs"]
+atlas = ExtResource("1_viusy")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ake3r"]
+atlas = ExtResource("1_viusy")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18mvg"]
+atlas = ExtResource("1_viusy")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmmp0"]
+atlas = ExtResource("1_viusy")
+region = Rect2(256, 256, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ict6q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vplca")
+"texture": SubResource("AtlasTexture_qd6xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ake3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18mvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmmp0")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viusy"]
@@ -28,6 +49,7 @@ size = Vector2(25, 15)
 [node name="tree" type="AnimatedSprite2D" unique_id=1619515109]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_ict6q")
+frame_progress = 0.33709082
 script = ExtResource("2_vplca")
 item = ExtResource("3_viusy")
 

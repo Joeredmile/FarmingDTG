@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddqtje88s7kfv"]
 
 [ext_resource type="Texture2D" uid="uid://xl3wadgr6qax" path="res://assets/light.png" id="1_24oxn"]
+[ext_resource type="Script" uid="uid://dkgv7rs5jbc6l" path="res://scripts/point_light_2d.gd" id="2_2e2gu"]
 
 [node name="light" type="Node2D" unique_id=1012762706]
 
@@ -9,3 +10,4 @@ energy = 0.8
 shadow_enabled = true
 texture = ExtResource("1_24oxn")
 texture_scale = 0.7
+script = ExtResource("2_2e2gu")
