@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmv3ggvs5hbp" path="res://scenes/rabbit.tscn" id="19_2cbcq"]
 [ext_resource type="PackedScene" uid="uid://bx47omwgerxst" path="res://scenes/rabbit_spawner.tscn" id="20_isj1j"]
 [ext_resource type="PackedScene" uid="uid://cuehhtgsthfu3" path="res://scenes/tree.tscn" id="21_so66j"]
+[ext_resource type="PackedScene" uid="uid://bim1i81hhe0to" path="res://scenes/campfire.tscn" id="22_tr1x6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("1_014kd")
@@ -273,9 +274,6 @@ position = Vector2(904, 196)
 [node name="light" parent="lights" unique_id=1012762706 instance=ExtResource("16_7nomh")]
 position = Vector2(900, 203)
 
-[node name="light2" parent="lights" unique_id=1516038126 instance=ExtResource("16_7nomh")]
-position = Vector2(367, 285)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1873360795]
 color = Color(1, 1, 1, 0.93333334)
 script = ExtResource("17_1s4pk")
@@ -320,3 +318,6 @@ position = Vector2(-295, 914)
 
 [node name="tree11" parent="Node" unique_id=1333640998 instance=ExtResource("21_so66j")]
 position = Vector2(865, 496)
+
+[node name="campfire" parent="." unique_id=519755012 instance=ExtResource("22_tr1x6")]
+position = Vector2(369, 254)

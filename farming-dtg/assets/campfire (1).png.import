@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"
+uid="uid://c0nfe0o4tfysp"
+path="res://.godot/imported/campfire (1).png-85044264ead9bef3749fb1cc49fae5bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Axe.png"
-dest_files=["res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"]
+source_file="res://assets/campfire (1).png"
+dest_files=["res://.godot/imported/campfire (1).png-85044264ead9bef3749fb1cc49fae5bc.ctex"]
 
 [params]
 
