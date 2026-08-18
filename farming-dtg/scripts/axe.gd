@@ -1,22 +1,24 @@
 extends Sprite2D
 
 @onready var timer: Timer = $Timer
-var can_equip = true
+var axe_can_equip = true
 
 func _input(event):
-	if event.is_action_pressed("hold_axe") and can_equip == true:
-		visible = not visible
-		timer.start()
-		can_equip = false
-		GlobalData.axe_equipped = not GlobalData.axe_equipped
-
+	if event.is_action_pressed("hold_axe") and axe_can_equip == true:
+		if GlobalData.gun_equipped == false:
+			visible = not visible
+			timer.start()
+			axe_can_equip = false
+			GlobalData.axe_equipped = not GlobalData.axe_equipped
+		else:
+			pass
 
 func _process(delta: float) -> void:
-	
 	if not visible:
 		return
-	look_at(get_global_mouse_position())
+	else:
+		look_at(get_global_mouse_position())
 
 
 func _on_timer_timeout() -> void:
-	can_equip = true
+	axe_can_equip = true

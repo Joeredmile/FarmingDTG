@@ -319,5 +319,8 @@ position = Vector2(-295, 914)
 [node name="tree11" parent="Node" unique_id=1333640998 instance=ExtResource("21_so66j")]
 position = Vector2(865, 496)
 
+[node name="tree12" parent="Node" unique_id=987832783 instance=ExtResource("21_so66j")]
+position = Vector2(664, 1529)
+
 [node name="campfire" parent="." unique_id=519755012 instance=ExtResource("22_tr1x6")]
 position = Vector2(369, 254)

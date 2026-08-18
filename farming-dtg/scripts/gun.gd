@@ -4,17 +4,17 @@ const BULLET = preload("res://scenes/bullet.tscn")
 @onready var timer: Timer = $"../timer"
 @onready var bulletTimer: Timer = $bulletTimer
 @onready var equiptimer: Timer = $Timer
-var can_equip = true
 
 func _input(event):
-	if event.is_action_pressed("hold_gun") and can_equip == true:
+	if event.is_action_pressed("hold_gun") and GlobalData.gun_can_equip == true:
+		GlobalData.gun_equipped == !GlobalData.gun_equipped
 		visible = not visible
 		equiptimer.start()
-		can_equip = false
+		GlobalData.gun_can_equip = false
 
 	
 func _on_timer_timeout() -> void:
-	can_equip = true
+	GlobalData.gun_can_equip = true
 
 	
 

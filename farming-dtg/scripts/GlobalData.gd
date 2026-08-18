@@ -10,3 +10,6 @@ var carrot_seeds = 1
 var bullet_amount = 5
 var axe_equipped = true
 var wood_amount = 0
+var gun_equipped = false
+var gun_can_equip = true
+var axe_can_equip = true

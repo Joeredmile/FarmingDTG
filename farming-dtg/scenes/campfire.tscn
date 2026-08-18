@@ -36,6 +36,8 @@ autoplay = "default"
 frame_progress = 0.22903684
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2071533432]
-energy = 1.85
+position = Vector2(1.999939, -0.00017929077)
+scale = Vector2(5.0859375, 4.1015625)
+energy = 1.65
 blend_mode = 2
 texture = ExtResource("2_yfrnb")

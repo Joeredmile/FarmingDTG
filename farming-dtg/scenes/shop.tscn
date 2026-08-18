@@ -69,5 +69,8 @@ autoplay = "shop"
 position = Vector2(-3, 23.25)
 shape = SubResource("RectangleShape2D_xfvoa")
 
+[node name="shoptimer" type="Timer" parent="." unique_id=1878994814]
+
 [connection signal="body_entered" from="shoparea" to="." method="_on_shoparea_body_entered"]
 [connection signal="body_exited" from="shoparea" to="." method="_on_shoparea_body_exited"]
+[connection signal="timeout" from="shoptimer" to="." method="_on_shoptimer_timeout"]
