@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d0tdi1tkuu8m"]
+
+[ext_resource type="Texture2D" uid="uid://wwbgx1h2ymf1" path="res://assets/Leek.png" id="1_oxhx8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4chw"]
+atlas = ExtResource("1_oxhx8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dsyd"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"stage_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4chw")
+}],
+"loop": true,
+"name": &"stage_2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stage_3",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stage_4",
+"speed": 5.0
+}]
+
+[node name="leek" type="AnimatedSprite2D" unique_id=537327584]
+sprite_frames = SubResource("SpriteFrames_8dsyd")
+animation = &"stage_2"
+autoplay = "stage_1"

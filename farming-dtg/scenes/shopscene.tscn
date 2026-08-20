@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="2_ihs06"]
 
 [node name="shopscene" type="Control" unique_id=1917038553]
+z_index = 4096
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

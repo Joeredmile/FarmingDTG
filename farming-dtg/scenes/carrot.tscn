@@ -101,16 +101,18 @@ offset_right = 128.0
 offset_bottom = 23.0
 text = "Press F to water."
 
+[node name="text_timer" type="Timer" parent="waterprompt" unique_id=2124506361]
+
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
-wait_time = 0.096
+wait_time = 10.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=209017176]
-wait_time = 0.625
+wait_time = 10.0
 one_shot = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=552314641]
-wait_time = 0.38
+wait_time = 10.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1914841187]
@@ -125,6 +127,7 @@ shape = SubResource("RectangleShape2D_elckd")
 position = Vector2(1.5, 3.5)
 shape = SubResource("RectangleShape2D_mb1r7")
 
+[connection signal="timeout" from="waterprompt/text_timer" to="." method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

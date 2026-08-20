@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+
+
 var land_ref = null
 @onready var waterprompt: Label = $waterprompt
 @onready var timer: Timer = $Timer
@@ -19,6 +21,7 @@ func _ready() -> void:
 	#this is so i can only water the plant if im in its area
 func _on_watering_body_entered(body: Node2D) -> void:
 	if body.name == "player":
+		waterprompt.text = "Press F to water."
 		player_in_area = true
 		waterprompt.visible = true
 		player = body
@@ -26,6 +29,7 @@ func _on_watering_body_entered(body: Node2D) -> void:
 		
 func _on_watering_body_exited(body: Node2D) -> void:
 	if body.name == "player":
+		waterprompt.text = ""
 		player_in_area = false
 		waterprompt.visible = false
 
@@ -34,14 +38,20 @@ func _on_watering_body_exited(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if animation == "stage_1" and player_in_area:
 		if Input.is_action_just_pressed("water"):
+			waterprompt.visible = true
+			waterprompt.text = "Watered!"
 			carrot_watered = true
 			timer.start()
 	if animation == "stage_2" and player_in_area:
 		if Input.is_action_just_pressed("water"):
+			waterprompt.visible = true
+			waterprompt.text = "Watered!"
 			carrot_watered = true
 			timer_2.start()
 	if animation == "stage_3" and player_in_area:
 		if Input.is_action_just_pressed("water"):
+			waterprompt.visible = true
+			waterprompt.text = "Watered!"
 			carrot_watered = true
 			timer_3.start()
 		else:
@@ -81,6 +91,8 @@ func _on_timer_3_timeout() -> void:
 		pass
 
 
+func _on_text_timer_timeout() -> void:
+	waterprompt.visible = false
 
 
 
