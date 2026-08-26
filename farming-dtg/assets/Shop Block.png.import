@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/axe.png-b3dc51e92f6a2c7984f6fe10f6ccaa2d.ctex"
+uid="uid://baippf6ww1s4s"
+path="res://.godot/imported/Shop Block.png-04096b01ca9a42a30abbf4458cb7d410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/axe.png"
-dest_files=["res://.godot/imported/axe.png-b3dc51e92f6a2c7984f6fe10f6ccaa2d.ctex"]
+source_file="res://assets/Shop Block.png"
+dest_files=["res://.godot/imported/Shop Block.png-04096b01ca9a42a30abbf4458cb7d410.ctex"]
 
 [params]
 

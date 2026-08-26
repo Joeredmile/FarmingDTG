@@ -1,38 +1,101 @@
 [gd_scene format=3 uid="uid://d0tdi1tkuu8m"]
 
+[ext_resource type="Texture2D" uid="uid://cxmfieel5tugr" path="res://assets/Carrot.png" id="1_f4chw"]
 [ext_resource type="Texture2D" uid="uid://wwbgx1h2ymf1" path="res://assets/Leek.png" id="1_oxhx8"]
+[ext_resource type="Script" uid="uid://bun8ccandgm03" path="res://scenes/leek.gd" id="3_8dsyd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4chw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dsyd"]
+atlas = ExtResource("1_f4chw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cbjg"]
 atlas = ExtResource("1_oxhx8")
 region = Rect2(0, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_clvt4"]
+atlas = ExtResource("1_oxhx8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3n04"]
+atlas = ExtResource("1_oxhx8")
+region = Rect2(0, 128, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8dsyd"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dsyd")
+}],
 "loop": true,
 "name": &"stage_1",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f4chw")
+"texture": SubResource("AtlasTexture_4cbjg")
 }],
 "loop": true,
 "name": &"stage_2",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clvt4")
+}],
 "loop": true,
 "name": &"stage_3",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3n04")
+}],
 "loop": true,
 "name": &"stage_4",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cbjg"]
+size = Vector2(49, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clvt4"]
+size = Vector2(49, 49)
+
 [node name="leek" type="AnimatedSprite2D" unique_id=537327584]
 sprite_frames = SubResource("SpriteFrames_8dsyd")
-animation = &"stage_2"
+animation = &"stage_1"
 autoplay = "stage_1"
+script = ExtResource("3_8dsyd")
+
+[node name="waterprompt" type="Label" parent="." unique_id=517651358]
+visible = false
+z_index = 19
+offset_right = 128.0
+offset_bottom = 23.0
+text = "Press F to water."
+
+[node name="text_timer" type="Timer" parent="waterprompt" unique_id=390435157]
+
+[node name="Timer" type="Timer" parent="." unique_id=1731784035]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1013543757]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=995762713]
+wait_time = 10.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1487005071]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1936615216]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_4cbjg")
+
+[node name="watering" type="Area2D" parent="." unique_id=1067852535]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="watering" unique_id=957799287]
+position = Vector2(1.5, 3.5)
+shape = SubResource("RectangleShape2D_clvt4")

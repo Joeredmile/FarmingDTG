@@ -13,3 +13,5 @@ var wood_amount = 0
 var gun_equipped = false
 var gun_can_equip = true
 var axe_can_equip = true
+var leek_seeds = 1
+var leek_amount = 0

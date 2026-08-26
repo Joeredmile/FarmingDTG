@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bim1i81hhe0to"]
 
 [ext_resource type="Texture2D" uid="uid://c0nfe0o4tfysp" path="res://assets/campfire (1).png" id="1_54scn"]
-[ext_resource type="Script" uid="uid://2hropod305j" path="res://scenes/campfire.gd" id="1_yfrnb"]
+[ext_resource type="Script" uid="uid://2hropod305j" path="res://scripts/campfire.gd" id="1_yfrnb"]
 [ext_resource type="Texture2D" uid="uid://xl3wadgr6qax" path="res://assets/light.png" id="2_yfrnb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8pk5p"]
