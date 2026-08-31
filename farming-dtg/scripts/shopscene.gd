@@ -4,7 +4,8 @@ class_name Shop
 
 const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 @export var sell_bullet: PackedScene = preload("res://scenes/sellbullet.tscn")
-@export var sell_plant: PackedScene = preload("res://scenes/sellplant.tscn")
+@export var sell_carrot: PackedScene = preload("res://scenes/sellcarrot.tscn")
+@export var sell_leek: PackedScene = preload("res://scenes/sellLeek.tscn")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 var player_ref: Node = null
 @onready var log_label: Label = $Label
@@ -13,8 +14,11 @@ var player_ref: Node = null
 func _ready() -> void:
 	#creates sell cards
 	for i in range(1):
-		var sell_plant_instance = sell_plant.instantiate()
-		h_box_container.add_child(sell_plant_instance)
+		var sell_carrot_instance = sell_carrot.instantiate()
+		h_box_container.add_child(sell_carrot_instance)
+		
+		#var sell_leek_instance = sell_leek.instantiate()
+		#h_box_container.add_child(sell_leek_instance)
 		
 		var sell_bullet_instance = sell_bullet.instantiate()
 		h_box_container.add_child(sell_bullet_instance)

@@ -463,4 +463,5 @@ position = Vector2(865, 496)
 position = Vector2(664, 1529)
 
 [node name="campfire" parent="." unique_id=519755012 instance=ExtResource("22_tr1x6")]
+z_index = 1
 position = Vector2(369, 254)

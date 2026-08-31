@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"
+uid="uid://52pq2h4ydvtf"
+path="res://.godot/imported/Leek-1.png.png-e6f54b8d2250e185c93d4e1ab75af919.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Axe.png"
-dest_files=["res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"]
+source_file="res://assets/Leek-1.png.png"
+dest_files=["res://.godot/imported/Leek-1.png.png-e6f54b8d2250e185c93d4e1ab75af919.ctex"]
 
 [params]
 

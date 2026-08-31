@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ps0fkwbf1u7r"]
 
 [ext_resource type="Script" path="res://scripts/shopscene.gd" id="1_ihs06"]
-[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="2_ihs06"]
+[ext_resource type="Texture2D" uid="uid://baippf6ww1s4s" path="res://assets/Shop Block1.png" id="2_ihs06"]
 
 [node name="shopscene" type="Control" unique_id=1917038553]
 z_index = 4096
