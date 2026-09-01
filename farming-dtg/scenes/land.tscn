@@ -18,10 +18,10 @@ shape = SubResource("RectangleShape2D_84fu1")
 
 [node name="interactionslabel" type="Label" parent="." unique_id=1425353218]
 z_index = 51
-offset_left = -167.0
-offset_top = -25.0
-offset_right = -46.0
-offset_bottom = -2.0
+offset_left = -86.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = -7.0
 
 [node name="resettimer" type="Timer" parent="." unique_id=1628298299]
 wait_time = 0.5

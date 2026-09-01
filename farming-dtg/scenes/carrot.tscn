@@ -87,7 +87,7 @@ size = Vector2(49, 48)
 size = Vector2(49, 49)
 
 [node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
-z_index = 1
+z_index = 31
 sprite_frames = SubResource("SpriteFrames_wql3v")
 animation = &"stage_3"
 autoplay = "stage_1"

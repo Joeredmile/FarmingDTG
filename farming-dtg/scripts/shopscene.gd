@@ -17,8 +17,8 @@ func _ready() -> void:
 		var sell_carrot_instance = sell_carrot.instantiate()
 		h_box_container.add_child(sell_carrot_instance)
 		
-		#var sell_leek_instance = sell_leek.instantiate()
-		#h_box_container.add_child(sell_leek_instance)
+		var sell_leek_instance = sell_leek.instantiate()
+		h_box_container.add_child(sell_leek_instance)
 		
 		var sell_bullet_instance = sell_bullet.instantiate()
 		h_box_container.add_child(sell_bullet_instance)

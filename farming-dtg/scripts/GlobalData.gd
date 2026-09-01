@@ -15,3 +15,5 @@ var gun_can_equip = true
 var axe_can_equip = true
 var leek_seeds = 1
 var leek_amount = 0
+var player_in_patch = false
+var planted = false
