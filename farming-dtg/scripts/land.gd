@@ -6,6 +6,7 @@ extends Sprite2D
 
 
 var player_ref = null
+var planted: bool = false
 
 #detects player
 func _on_area_2d_body_entered(body):
@@ -29,6 +30,6 @@ func _process(delta):
 #and GlobalData.carrot_seeds > 0:
 #resets land so plantable after harvested
 func reset_patch():
-	GlobalData.planted = false
+	planted = false
 
 #plants seed
