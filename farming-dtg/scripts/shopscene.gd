@@ -2,6 +2,8 @@ extends Control
 
 class_name Shop
 
+
+const LEEK_ITEM: InvItem = preload("res://inventory/items/leek.tres")
 const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 @export var sell_bullet: PackedScene = preload("res://scenes/sellbullet.tscn")
 @export var sell_carrot: PackedScene = preload("res://scenes/sellcarrot.tscn")
@@ -9,7 +11,8 @@ const CARROT_ITEM: InvItem = preload("res://inventory/items/carrot.tres")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 var player_ref: Node = null
 @onready var log_label: Label = $Label
-
+var sold_carrot = false
+var sold_leek = false
 
 func _ready() -> void:
 	#creates sell cards
@@ -46,6 +49,27 @@ func sell_carrots():
 				$ResetTimer.start()
 			else:
 				log_label.text = "No carrots found in inventory"
+				$ResetTimer.start()
+				
+func sell_leeks():
+	if player_ref and player_ref.inv != null:
+		var inv_ref: Inv = player_ref.inv
+		if inv_ref:
+			var want_to_sell: int = int(GlobalData.leek_amount)
+			if want_to_sell <= 0:
+				log_label.text = "Come back when you have something..."
+				$ResetTimer.start()
+				return
+			var removed: int = int(inv_ref.remove(LEEK_ITEM, want_to_sell))
+			if removed > 0:
+				GlobalData.coin_amount += removed *6
+				GlobalData.leek_amount -= removed
+				log_label.text = "Sold %d leeks" % removed
+				$ResetTimer.start()
+				log_label.text = "%s\nCoins: %d" % [log_label.text, GlobalData.coin_amount]
+				$ResetTimer.start()
+			else:
+				log_label.text = "No Leeks found in inventory"
 				$ResetTimer.start()
 
 func _on_reset_timer_timeout() -> void:

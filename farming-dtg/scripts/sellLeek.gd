@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 				_set_log_text("Ur too brokie")
 				$ResetTimer.start()
 				return
-			GlobalData.coin_amount -= 1
+			GlobalData.coin_amount -= 3
 			GlobalData.leek_seeds += 1
 			_set_log_text("KACHING SUCKER")
 			print(GlobalData.leek_seeds)

@@ -11,15 +11,25 @@ var planted: bool = false
 #detects player
 func _on_area_2d_body_entered(body):
 	if body.name == "player":
-		interactions_label.text = "E to plant"
+		if GlobalData.planted == false:
+			interactions_label.text = "E to plant"
+		if GlobalData.planted == true:
+			interactions_label.text = ""
 		GlobalData.player_in_patch = true
 		player_ref = body
+		if body.has_node("UIForPlanting"):
+			body.get_node("UIForPlanting").land = self
 
 #detects player
 func _on_area_2d_body_exited(body):
 	if body.name == "player":
-		interactions_label.text = ""
+		if GlobalData.planted == false:
+			interactions_label.text = "E to plant"
+		if GlobalData.planted == true:
+			interactions_label.text = ""
 		GlobalData.player_in_patch = false
+		if body.has_node("UIForPlanting"):
+			body.get_node("UIForPlanting").land = null
 		player_ref = null
 
 #function for the input key
@@ -27,9 +37,6 @@ func _process(delta):
 	pass
  
 
-#and GlobalData.carrot_seeds > 0:
 #resets land so plantable after harvested
 func reset_patch():
 	planted = false
-
-#plants seed

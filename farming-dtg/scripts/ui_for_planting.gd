@@ -53,12 +53,15 @@ func plant_carrot():
 		$resettimer.start()
 		return
 	var carrot = carrot_scene.instantiate()
-	carrot.global_position = land.global_position
-	land.get_parent().add_child(carrot)
-	carrot.land_ref = self
-	GlobalData.planted = true
-	GlobalData.carrot_seeds -= 1
-	label.text = "Planted a carrot!"
+	if is_instance_valid(carrot) and is_instance_valid(land):
+		carrot.global_position = land.global_position
+		land.get_parent().add_child(carrot)
+		carrot.land_ref = self
+		GlobalData.planted = true
+		GlobalData.carrot_seeds -= 1
+		label.text = "Planted a carrot!"
+	else:
+		print("Cannot move carrot. Land or carrot has been freed/destroyed.")
 	$resettimer.start()
 
 func _on_resettimer_timeout() -> void:
