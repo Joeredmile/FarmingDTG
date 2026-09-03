@@ -99,7 +99,7 @@ func plant_carrot():
 		$carrot_button.visible = (GlobalData.carrot_seeds > 0)
 		$resettimer.start()
 		return
-	#instantiate carrot and ensure both carrot and land are valid
+	#does the same thing as the leek one but for carrot and land
 	var carrot = carrot_scene.instantiate()
 	if not is_instance_valid(carrot) or not is_instance_valid(land):
 		print("Cannot move carrot. Land or carrot has been freed/destroyed.")
