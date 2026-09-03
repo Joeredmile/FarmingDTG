@@ -56,3 +56,4 @@ text = "What seed do you want to plant?"
 [connection signal="pressed" from="carrot_button" to="." method="_on_carrot_button_pressed"]
 [connection signal="pressed" from="leek_button" to="." method="_on_leek_button_pressed"]
 [connection signal="timeout" from="resettimer" to="." method="_on_resetimer_timeout"]
+[connection signal="timeout" from="resettimer" to="." method="_on_resettimer_timeout"]

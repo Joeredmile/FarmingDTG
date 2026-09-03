@@ -104,15 +104,12 @@ text = "Press F to water."
 [node name="text_timer" type="Timer" parent="waterprompt" unique_id=2124506361]
 
 [node name="Timer" type="Timer" parent="." unique_id=785437089]
-wait_time = 10.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=209017176]
-wait_time = 10.0
 one_shot = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=552314641]
-wait_time = 10.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1914841187]

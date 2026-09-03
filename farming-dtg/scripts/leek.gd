@@ -62,10 +62,9 @@ func _process(delta: float) -> void:
 			player.collect(item)
 			GlobalData.leek_amount += 1
 			print(GlobalData.leek_amount)
-			if land_ref:
-				land_ref.reset_patch()
+			land_ref.reset_patch()
 			queue_free()
-	
+
 
 	#watering logic for the carrots
 func _on_timer_timeout():
@@ -74,6 +73,7 @@ func _on_timer_timeout():
 		timer.stop()
 		leek_watered = false
 
+
 func _on_timer_2_timeout():
 	if leek_watered and animation == "stage_2":
 		play("stage_3")
@@ -81,12 +81,14 @@ func _on_timer_2_timeout():
 		leek_watered = false
 	else:
 		pass
-	
+
+
 func _on_timer_3_timeout() -> void:
 	if leek_watered and animation == "stage_3":
 		play("stage_4_a")
 		timer_3.stop()
 		leek_watered = false
+		GlobalData.leek_final_stage = true
 	else:
 		pass
 

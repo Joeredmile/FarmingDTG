@@ -59,16 +59,17 @@ func _process(delta: float) -> void:
 
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
+			GlobalData.carrot_final_stage = false
 			player.collect(item)
 			GlobalData.carrot_amount += 1
 			print(GlobalData.carrot_amount)
-			if land_ref:
-				land_ref.reset_patch()
+			land_ref.reset_patch()
 			queue_free()
 	
 
 	#watering logic for the carrots
 func _on_timer_timeout():
+	GlobalData.carrot_final_stage = true
 	if carrot_watered:
 		play("stage_2")
 		timer.stop()
@@ -84,9 +85,11 @@ func _on_timer_2_timeout():
 	
 func _on_timer_3_timeout() -> void:
 	if carrot_watered and animation == "stage_3":
+		GlobalData.carrot_final_stage = true
 		play("stage_4_a")
 		timer_3.stop()
 		carrot_watered = false
+		
 	else:
 		pass
 
