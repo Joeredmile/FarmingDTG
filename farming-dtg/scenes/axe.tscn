@@ -4,11 +4,10 @@
 [ext_resource type="Script" uid="uid://dogjbm4yaelfg" path="res://scripts/axe.gd" id="2_8s0ly"]
 
 [node name="axe" type="Sprite2D" unique_id=1256663685]
-rotation = 1.5707964
+position = Vector2(14.999999, 12.000001)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_725vr")
 offset = Vector2(-10, -62)
-flip_h = true
 script = ExtResource("2_8s0ly")
 
 [node name="Timer" type="Timer" parent="." unique_id=500991038]
