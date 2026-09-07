@@ -432,7 +432,7 @@ color = Color(1, 1, 1, 0.93333334)
 script = ExtResource("17_1s4pk")
 
 [node name="rabbit spawners" parent="." unique_id=170633788 instance=ExtResource("20_isj1j")]
-position = Vector2(421, 719)
+position = Vector2(402, 131)
 
 [node name="Node" type="Node" parent="." unique_id=1346924915]
 
