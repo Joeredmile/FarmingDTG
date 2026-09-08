@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://taqwdb4ywctk"]
 
-[ext_resource type="Texture2D" uid="uid://twgnjf42ynrc" path="res://assets/Axe.png" id="1_725vr"]
+[ext_resource type="Texture2D" uid="uid://bf1olrca2whaq" path="res://assets/Axe (1).png" id="1_725vr"]
 [ext_resource type="Script" uid="uid://dogjbm4yaelfg" path="res://scripts/axe.gd" id="2_8s0ly"]
 
 [node name="axe" type="Sprite2D" unique_id=1256663685]
-position = Vector2(14.999999, 12.000001)
+position = Vector2(-1, 2.000001)
+rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_725vr")
 offset = Vector2(-10, -62)

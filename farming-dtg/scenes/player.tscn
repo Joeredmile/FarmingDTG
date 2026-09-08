@@ -349,10 +349,10 @@ position_smoothing_speed = 2.505
 wait_time = 1.4549999999999998
 
 [node name="Inv_UI" parent="." unique_id=2077556324 instance=ExtResource("5_qlg0r")]
-offset_left = -43.0
-offset_top = -111.0
-offset_right = 42.0
-offset_bottom = -48.0
+offset_left = -44.0
+offset_top = -128.0
+offset_right = 41.0
+offset_bottom = -65.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1601121238]
 visible = false
@@ -364,7 +364,8 @@ texture = ExtResource("7_fjrip")
 texture_scale = 0.6
 
 [node name="axe" parent="." unique_id=1256663685 instance=ExtResource("8_smehm")]
-position = Vector2(44, 43)
+position = Vector2(3, -7)
+rotation = -1.5707964
 scale = Vector2(0.6, 0.6)
 
 [node name="interactionslabel" type="Label" parent="." unique_id=1709163907]
