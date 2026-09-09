@@ -11,13 +11,16 @@ var new_rabbit = null
 @onready var canvas_modulate: CanvasModulate = $"../CanvasModulate"
 
 
-func _ready() -> void:
-	if not player:
-		player = get_tree().get_root().find_node("Player", true, false)
+#func _ready() -> void:
+	#if not player:
+	#	player = get_tree().get_root().find_node("Player", true, false)
 
 func _process(delta: float) -> void:
 	if canvas_modulate.color.is_equal_approx(NIGHT_COLOR):
 		timer.start()
+
+#func _physics_process(delta: float) -> void:
+#	if player == null: return
 
 
 func _on_timer_timeout() -> void:
