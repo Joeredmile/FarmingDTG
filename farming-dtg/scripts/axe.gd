@@ -24,9 +24,8 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	if not visible:
-		pass
-	else:
-		look_at(get_global_mouse_position())
+		return
+	look_at(get_global_mouse_position())
 
 
 func _on_timer_timeout() -> void:

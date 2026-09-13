@@ -1,5 +1,5 @@
 extends Control
-class_name SellCard
+class_name Sellcarrot
 
 @onready var timer: Timer = $Timer
 @onready var log_label: Label = $Label

@@ -4,47 +4,37 @@ extends Sprite2D
 @onready var interactions_label: Label = $interactionslabel
 @onready var resettimer: Timer = $resettimer
 
-var planted = false
-var player_in_patch = false
+
 var player_ref = null
+var planted: bool = false
 
 #detects player
 func _on_area_2d_body_entered(body):
 	if body.name == "player":
-		player_in_patch = true
+		if not planted:
+			interactions_label.text = "E to plant"
+		else:
+			interactions_label.text = ""
+		GlobalData.player_in_patch = true
 		player_ref = body
+		if body.has_node("UIForPlanting"):
+			body.get_node("UIForPlanting").land = self
 
 #detects player
 func _on_area_2d_body_exited(body):
 	if body.name == "player":
-		player_in_patch = false
+		interactions_label.text = ""
+		GlobalData.player_in_patch = false
+		if body.has_node("UIForPlanting"):
+			body.get_node("UIForPlanting").land = null
 		player_ref = null
 
 #function for the input key
 func _process(delta):
-	if player_in_patch and Input.is_action_just_pressed("plant") and GlobalData.carrot_seeds > 0:
-		plant_seed()
+	pass
+
 
 #resets land so plantable after harvested
 func reset_patch():
 	planted = false
-
-#plants seed
-func plant_seed():
-	if planted:
-		interactions_label.text = "Already planted here"
-		$resettimer.start()
-		return
-	var carrot = carrot_scene.instantiate()
-	carrot.position = self.global_position
-	get_parent().add_child(carrot)
-	carrot.land_ref = self
-	planted = true
-	GlobalData.carrot_seeds -= 1
-	interactions_label.text = "Planted a carrot!"
-	$resettimer.start()
-
-
-
-func _on_resettimer_timeout() -> void:
-		interactions_label.text = ""
+	interactions_label.text = "E to plant"

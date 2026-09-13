@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GlobalData="*uid://cg0xdwcmsokhu"
 
+[global_group]
+
+player=""
+carrot=""
+
 [input]
 
 left={

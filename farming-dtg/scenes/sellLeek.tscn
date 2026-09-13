@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://cxj1eob3f45v"]
+[gd_scene format=3 uid="uid://nkfa4h3mkfae"]
 
-[ext_resource type="Texture2D" uid="uid://b4r1ege86oika" path="res://assets/Carrot-4.png.png" id="1_qn4nt"]
-[ext_resource type="Script" uid="uid://dgtf1c0egcd0m" path="res://scripts/sellplant.gd" id="1_v36rp"]
+[ext_resource type="Script" uid="uid://dobjfl58debkt" path="res://scripts/sellLeek.gd" id="1_aa5ru"]
+[ext_resource type="Texture2D" uid="uid://52pq2h4ydvtf" path="res://assets/Leek-1.png.png" id="2_aa5ru"]
 
-[node name="sellplant" type="Control" unique_id=722939000]
+[node name="sellLeek" type="Control" unique_id=722939000]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v36rp")
+script = ExtResource("1_aa5ru")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1923389619]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_qn4nt")
+texture = ExtResource("2_aa5ru")
 
 [node name="Label" type="Label" parent="TextureRect" unique_id=1333183155]
 layout_mode = 0
@@ -24,7 +24,7 @@ offset_left = 1.0
 offset_top = 45.0
 offset_right = 115.0
 offset_bottom = 68.0
-text = "Carrot Seed $1"
+text = "Leek Seed $3"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=968566711]
