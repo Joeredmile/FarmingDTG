@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 	if not visible:
 		return
 	look_at(get_global_mouse_position())
+	rotation += deg_to_rad(90)
 
 
 func _on_timer_timeout() -> void:

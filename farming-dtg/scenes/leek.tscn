@@ -61,7 +61,7 @@ size = Vector2(49, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clvt4"]
 size = Vector2(49, 49)
 
-[node name="leek" type="AnimatedSprite2D" unique_id=537327584]
+[node name="leek" type="AnimatedSprite2D" unique_id=537327584 groups=["plant"]]
 sprite_frames = SubResource("SpriteFrames_8dsyd")
 animation = &"stage_1"
 autoplay = "stage_1"

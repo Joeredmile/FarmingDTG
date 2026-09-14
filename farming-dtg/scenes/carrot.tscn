@@ -86,7 +86,7 @@ size = Vector2(49, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb1r7"]
 size = Vector2(49, 49)
 
-[node name="carrot" type="AnimatedSprite2D" unique_id=1070333889]
+[node name="carrot" type="AnimatedSprite2D" unique_id=1070333889 groups=["carrot"]]
 z_index = 31
 sprite_frames = SubResource("SpriteFrames_wql3v")
 animation = &"stage_3"

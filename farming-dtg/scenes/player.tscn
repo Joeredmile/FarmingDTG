@@ -307,7 +307,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1248459986]
+[node name="player" type="CharacterBody2D" unique_id=1248459986 groups=["player"]]
 z_index = 1
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
@@ -365,7 +365,7 @@ texture_scale = 0.6
 
 [node name="axe" parent="." unique_id=1256663685 instance=ExtResource("8_smehm")]
 position = Vector2(3, -7)
-rotation = -1.5707964
+rotation = 1.5681287
 scale = Vector2(0.6, 0.6)
 
 [node name="interactionslabel" type="Label" parent="." unique_id=1709163907]

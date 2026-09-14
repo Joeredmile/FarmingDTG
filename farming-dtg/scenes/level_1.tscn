@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bx47omwgerxst" path="res://scenes/rabbit_spawner.tscn" id="20_isj1j"]
 [ext_resource type="PackedScene" uid="uid://cuehhtgsthfu3" path="res://scenes/tree.tscn" id="21_so66j"]
 [ext_resource type="PackedScene" uid="uid://bim1i81hhe0to" path="res://scenes/campfire.tscn" id="22_tr1x6"]
+[ext_resource type="PackedScene" uid="uid://ddmv3ggvs5hbp" path="res://scenes/rabbit.tscn" id="24_wbtxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbtxt"]
 texture = ExtResource("1_d5akn")
@@ -480,3 +481,6 @@ position = Vector2(-219, 2040)
 
 [node name="rabbit spawners2" parent="rabbits" unique_id=1317005614 instance=ExtResource("20_isj1j")]
 position = Vector2(955, 2002)
+
+[node name="rabbit" parent="rabbits" unique_id=588397461 instance=ExtResource("24_wbtxt")]
+position = Vector2(378, 48)

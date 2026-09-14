@@ -61,6 +61,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxh4p"]
 size = Vector2(22, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haj5u"]
+
 [node name="rabbit" type="CharacterBody2D" unique_id=588397461]
 z_index = 1
 script = ExtResource("1_dxh4p")
@@ -86,7 +88,14 @@ shape = SubResource("RectangleShape2D_dxh4p")
 [node name="Timer2" type="Timer" parent="." unique_id=426488384]
 autostart = true
 
+[node name="detectplayer" type="Area2D" parent="." unique_id=1254718879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectplayer" unique_id=172876173]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_haj5u")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="detectplayer" to="." method="_on_detectplayer_body_entered"]
