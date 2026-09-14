@@ -15,9 +15,6 @@ var new_rabbit = null
 	#if not player:
 	#	player = get_tree().get_root().find_node("Player", true, false)
 
-func _process(de1lta: float) -> void:
-	if canvas_modulate.color.is_equal_approx(NIGHT_COLOR):
-		timer.start()
 
 #func _physics_process(delta: float) -> void:
 #	if player == null: return
