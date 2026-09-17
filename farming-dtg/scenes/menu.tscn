@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cch470srgf6y5" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://7jprkycbn8pk" path="res://assets/Loading screen  (3).png" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://llq0srah7jk5" path="res://assets/Button normal.png" id="3_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://bs0prja4gh7c2" path="res://assets/Button pressed.png" id="4_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://p08xvsnhvlww" path="res://assets/Button stationary.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://gxh8u7ke2gav" path="res://assets/Button pressed (1).png" id="4_4ytvr"]
 
 [node name="menu" type="Control" unique_id=330199852]
 layout_mode = 3
@@ -15,55 +15,38 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_yqeox")
 
-[node name="play" type="Button" parent="." unique_id=547253610]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.483887
-offset_top = -44.0
-offset_right = 63.483887
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Start Game"
-
-[node name="quit" type="Button" parent="." unique_id=909900587]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = 6.0
-offset_right = 64.5
-offset_bottom = 37.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Quit to desktop"
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1646965881]
-visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_vjb58")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=350766431]
-visible = false
-z_index = 4
-texture_filter = 2
+[node name="play" type="TextureButton" parent="." unique_id=1651129878]
 layout_mode = 0
-offset_left = -896.0
-offset_top = -252.0
-offset_right = 2944.0
-offset_bottom = 2154.0
+offset_left = 36.0
+offset_top = 163.0
+offset_right = 1956.0
+offset_bottom = 1243.0
 texture_normal = ExtResource("3_mhnvy")
 texture_pressed = ExtResource("4_4ytvr")
-texture_hover = ExtResource("3_mhnvy")
+
+[node name="settings" type="TextureButton" parent="." unique_id=1598627199]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 266.0
+offset_right = 1957.0
+offset_bottom = 1346.0
+texture_normal = ExtResource("3_mhnvy")
+texture_pressed = ExtResource("4_4ytvr")
+
+[node name="quit" type="TextureButton" parent="." unique_id=517950790]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 373.0
+offset_right = 1958.0
+offset_bottom = 1453.0
+texture_normal = ExtResource("3_mhnvy")
+texture_pressed = ExtResource("4_4ytvr")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

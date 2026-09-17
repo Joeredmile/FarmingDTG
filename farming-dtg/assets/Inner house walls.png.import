@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs0prja4gh7c2"
-path="res://.godot/imported/Button pressed.png-eacb74e9fe65daaafc48205e998124ea.ctex"
+uid="uid://m4m4f0akpia"
+path="res://.godot/imported/Inner house walls.png-74a985e195145c85fbda1215c6b44b20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Button pressed.png"
-dest_files=["res://.godot/imported/Button pressed.png-eacb74e9fe65daaafc48205e998124ea.ctex"]
+source_file="res://assets/Inner house walls.png"
+dest_files=["res://.godot/imported/Inner house walls.png-74a985e195145c85fbda1215c6b44b20.ctex"]
 
 [params]
 
