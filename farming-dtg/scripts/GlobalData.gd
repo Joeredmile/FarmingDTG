@@ -19,3 +19,4 @@ var player_in_patch = false
 var planted = false
 var carrot_final_stage = false
 var leek_final_stage = false
+var vege_planted = []

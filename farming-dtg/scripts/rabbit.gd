@@ -10,7 +10,6 @@ const dead_color = Color("#000000")
 @onready var timer: Timer = $Timer
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
-@onready var all_plants = []
 var is_roaming = true
 var dir = Vector2.RIGHT
 var start_pos
@@ -24,53 +23,23 @@ enum {
 
 
 
-
-
 var current_state = IDLE
 
 func _ready():
 	randomize()
 	start_pos = position
-	all_plants = get_tree().get_nodes_in_group("plant")
 	
 func _process(delta: float) -> void:
-	if all_plants.size() > 0:
-		var closest_plant = all_plants[0]
-		var shortest_dist = global_position.distance_to(closest_plant.global_position)
-
-		for p in all_plants:
-			var dist = global_position.distance_to(p.global_position)
-			if dist < shortest_dist:
-				shortest_dist = dist
-				closest_plant = p
-		
-		all_plants = closest_plant
-		
-	else:
-		all_plants = null
-			
-	if all_plants != null:
-		var direction = (all_plants.global_position - global_position).normalized()
+	if GlobalData.vege_planted != []:
+		var direction = (GlobalData.vege_planted.global_position - global_position).normalized()
 		velocity = direction * SPEED
+		print("working")
 		move_and_slide()
 		if direction.x != 0:
 			$AnimatedSprite2D.flip_h = (direction.x < 0)
-	
-		
-		
-		
-		
-		
-					
-		
-	
-	
-	
-	
-	
+			
 	
 	else:
-		var plant = get_tree().get_nodes_in_group("plants")
 		if current_state == IDLE or current_state == NEW_DIR:
 			$AnimatedSprite2D.play("dead")
 		elif current_state == MOVE:

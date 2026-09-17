@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://rcqfly1lk860"]
 
 [ext_resource type="Script" uid="uid://cch470srgf6y5" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://7jprkycbn8pk" path="res://assets/Loading screen  (3).png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://llq0srah7jk5" path="res://assets/Button normal.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bs0prja4gh7c2" path="res://assets/Button pressed.png" id="4_4ytvr"]
 
 [node name="menu" type="Control" unique_id=330199852]
 layout_mode = 3
@@ -41,6 +44,26 @@ offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit to desktop"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1646965881]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_vjb58")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=350766431]
+visible = false
+z_index = 4
+texture_filter = 2
+layout_mode = 0
+offset_left = -896.0
+offset_top = -252.0
+offset_right = 2944.0
+offset_bottom = 2154.0
+texture_normal = ExtResource("3_mhnvy")
+texture_pressed = ExtResource("4_4ytvr")
+texture_hover = ExtResource("3_mhnvy")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
