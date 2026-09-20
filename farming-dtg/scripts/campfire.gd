@@ -9,15 +9,15 @@ const TIME_SCALE = 0.005
 
 #var light_visible = false
 
-func _ready() -> void:
-	not visible
+#func _ready() -> void:
+#	not visible
 
-func _process(delta: float) -> void:
-	if canvas_modulate.color.is_equal_approx(NIGHT_COLOR):
-		visible
+#func _process(delta: float) -> void:
+	#if canvas_modulate.color.is_equal_approx(NIGHT_COLOR):
+	#	visible
 		#lighton()
-	if canvas_modulate.color.is_equal_approx(DAY_COLOR):
-		not visible
+	#if canvas_modulate.color.is_equal_approx(DAY_COLOR):
+	#	not visible
 		#lightoff()
 
 #func lighton():
