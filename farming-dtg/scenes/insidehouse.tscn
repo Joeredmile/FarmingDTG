@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dkrnyqoolnmwf" path="res://scripts/insidehouse.gd" id="1_qh0dq"]
 [ext_resource type="Texture2D" uid="uid://m4m4f0akpia" path="res://assets/Inner house walls.png" id="2_jvqi6"]
 [ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="4_x6xq4"]
+[ext_resource type="Script" uid="uid://cdgbyb8lxgj4a" path="res://scripts/bed.gd" id="5_eeupv"]
 [ext_resource type="PackedScene" uid="uid://b1m2h4485s6rn" path="res://ui/time_ui.tscn" id="6_eeupv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6xq4"]
@@ -72,12 +73,21 @@ tile_set = SubResource("TileSet_eeupv")
 position = Vector2(290, 0)
 scale = Vector2(0.4375, 1)
 texture = ExtResource("4_x6xq4")
+script = ExtResource("5_eeupv")
 
 [node name="Area2D" type="Area2D" parent="bed" unique_id=264832630]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bed/Area2D" unique_id=103946035]
 position = Vector2(2.2857056, -0.5)
 shape = SubResource("RectangleShape2D_qh0dq")
+
+[node name="SleepLabel" type="Label" parent="bed" unique_id=324246991]
+offset_left = -274.28574
+offset_top = -124.0
+offset_right = 240.0004
+offset_bottom = -101.0
+
+[node name="SleepTimer" type="Timer" parent="bed" unique_id=251621832]
 
 [node name="doorway" type="Sprite2D" parent="." unique_id=2143599175]
 position = Vector2(124, 238.00002)
@@ -115,5 +125,17 @@ scale = Vector2(2, 2)
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1086907853]
 position = Vector2(124, 203)
 
+[node name="SleepScreen" type="ColorRect" parent="." unique_id=493029543]
+visible = false
+z_index = 502
+offset_left = -1653.0
+offset_top = -1678.0
+offset_right = 2281.0
+offset_bottom = 2256.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="bed/Area2D" to="bed" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="bed/Area2D" to="bed" method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="bed/SleepTimer" to="bed" method="_on_sleep_timer_timeout"]
 [connection signal="body_entered" from="doorway/door" to="." method="_on_door_body_entered"]
 [connection signal="body_exited" from="doorway/door" to="." method="_on_door_body_exited"]

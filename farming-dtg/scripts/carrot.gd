@@ -101,7 +101,16 @@ func _on_timer_3_timeout() -> void:
 func _on_text_timer_timeout() -> void:
 	waterprompt.visible = false
 
+func sleep_day():
+	if not GlobalData.carrot_watered:
+		return
 
+	if animation == "stage_1":
+		timer.start()
+	elif animation == "stage_2":
+		timer_2.start()
+	elif animation == "stage_3":
+		timer_3.start()
 
 #Picking up the carrots wait no im gonna try something else
 #func _on_area_2d_body_entered(body: Node2D):

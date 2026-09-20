@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 		interactions_label.text = ""
 
 		GlobalData.outside_house_position = player.global_position
-
+		player.z_index = 501
 		var house = house_scene.instantiate()
 		get_tree().current_scene.add_child(house)
 

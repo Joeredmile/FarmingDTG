@@ -13,5 +13,5 @@ metadata/_custom_type_script = "uid://dsq3mcn0shue5"
 [node name="TimeSystem" type="Node" unique_id=1061188527]
 script = ExtResource("1_rk3ho")
 date_time = SubResource("Resource_mbb35")
-ticks_pr_second = 600
+ticks_pr_second = 300
 metadata/_custom_type_script = "uid://13510ttn7g4q"

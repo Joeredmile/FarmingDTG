@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 		queue_free()
 
 		player.global_position = GlobalData.outside_house_position
-
+		player.z_index = 1
 
 func _on_door_body_entered(body: Node2D) -> void:
 	if body.name == "player":

@@ -369,8 +369,8 @@ position = Vector2(904, 196)
 [node name="tilemaps" type="Node" parent="." unique_id=1234482981]
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="tilemaps" unique_id=605400150]
-z_index = 65
-tile_map_data = PackedByteArray("AAACAAQAAAABAAAAAAABAAQAAAABAAEAAAADAAQAAAAAAAEAAAAEAAQAAAABAAEAAAAFAAQAAAAAAAEAAAAEAAAAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAAAAAADAAAAAAAAAAEAAAA=")
+z_index = 1
+tile_map_data = PackedByteArray("AAACAAQAAAABAAAAAAABAAQAAAABAAEAAAADAAQAAAAAAAEAAAAEAAQAAAABAAEAAAAFAAQAAQABAAAAAAABAAAAAAABAAEAAAACAAAAAAABAAAAAAADAAAAAQABAAAAAAAEAAAAAQACAAAAAAAGAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_x2fux")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemaps" unique_id=691803933]
@@ -387,7 +387,7 @@ tile_map_data = PackedByteArray("AAD5/yQAAwAAAAAAAAATACQAAwAAAAAAAAD5/yYAAwABAAA
 tile_set = SubResource("TileSet_rus8k")
 
 [node name="player" parent="." unique_id=1248459986 instance=ExtResource("2_bswci")]
-position = Vector2(712, 286)
+position = Vector2(-54, 184)
 
 [node name="shopscene" parent="player" unique_id=1917038553 instance=ExtResource("13_x2xxo")]
 visible = false
@@ -436,39 +436,51 @@ script = ExtResource("17_1s4pk")
 [node name="trees" type="Node" parent="." unique_id=1088466238]
 
 [node name="tree" parent="trees" unique_id=1619515109 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(-138, 1779)
 
 [node name="tree2" parent="trees" unique_id=907795005 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(-248, 1384)
 
 [node name="tree3" parent="trees" unique_id=511968041 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(1009, 1304)
 
 [node name="tree4" parent="trees" unique_id=712836775 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(303, 1862)
 
 [node name="tree5" parent="trees" unique_id=599669067 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(649, 2094)
 
 [node name="tree6" parent="trees" unique_id=1445652146 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(-57, 2121)
 
 [node name="tree7" parent="trees" unique_id=1832152402 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(105, 600)
 
 [node name="tree8" parent="trees" unique_id=596313496 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(948, -174)
 
 [node name="tree9" parent="trees" unique_id=466081431 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(1053, 2122)
 
 [node name="tree10" parent="trees" unique_id=1000164789 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(-295, 914)
 
 [node name="tree11" parent="trees" unique_id=1333640998 instance=ExtResource("21_so66j")]
+y_sort_enabled = false
 position = Vector2(865, 496)
 
 [node name="tree12" parent="trees" unique_id=987832783 instance=ExtResource("21_so66j")]
+z_index = 7
 position = Vector2(664, 1529)
 
 [node name="campfire" parent="." unique_id=519755012 instance=ExtResource("22_tr1x6")]
