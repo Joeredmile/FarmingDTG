@@ -8,6 +8,7 @@ extends DirectionalLight2D
 @export var night_start: DateTime
 @export var transition_time: int = 30 #in minutes
 @export var time_system: TimeSystem
+
 var in_transition: bool = false
 
 enum DayState {DAY,NIGHT}
@@ -27,6 +28,14 @@ var current_state: DayState
 	DayState.DAY: day_color,
 	DayState.NIGHT: night_color,
 }
+
+func _ready() -> void:
+	var diff_day_start = time_system.date_time.diff_without_days(day_start)
+	var diff_night_start = time_system.date_time.diff_without_days(night_start)
+	if diff_day_start < 0 || diff_night_start > 0:
+		current_state = DayState.NIGHT
+
+
 
 func update(game_time: DateTime) -> void:
 	var next_state = transition_map[current_state]
