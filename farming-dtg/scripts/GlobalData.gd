@@ -20,3 +20,6 @@ var planted = false
 var carrot_final_stage = false
 var leek_final_stage = false
 var vege_planted = []
+var player_sleeping = false
+var carrot_watered = true
+var outside_house_position: Vector2 = Vector2.ZERO

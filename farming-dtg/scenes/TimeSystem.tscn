@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpn0dddb885ea"]
+
+[ext_resource type="Script" uid="uid://13510ttn7g4q" path="res://ui/time_system.gd" id="1_rk3ho"]
+[ext_resource type="Script" uid="uid://dsq3mcn0shue5" path="res://ui/date_time.gd" id="2_3ykh8"]
+
+[sub_resource type="Resource" id="Resource_mbb35"]
+script = ExtResource("2_3ykh8")
+seconds = 59
+minutes = 59
+hours = 23
+metadata/_custom_type_script = "uid://dsq3mcn0shue5"
+
+[node name="TimeSystem" type="Node" unique_id=1061188527]
+script = ExtResource("1_rk3ho")
+date_time = SubResource("Resource_mbb35")
+ticks_pr_second = 600
+metadata/_custom_type_script = "uid://13510ttn7g4q"

@@ -10,6 +10,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 769.77783
+offset_bottom = 433.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -23,28 +25,28 @@ texture = ExtResource("2_vjb58")
 
 [node name="play" type="TextureButton" parent="." unique_id=1651129878]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 163.0
-offset_right = 1956.0
-offset_bottom = 1243.0
+offset_left = 776.0
+offset_top = 653.0
+offset_right = 1211.0
+offset_bottom = 761.0
 texture_normal = ExtResource("3_mhnvy")
 texture_pressed = ExtResource("4_4ytvr")
 
 [node name="settings" type="TextureButton" parent="." unique_id=1598627199]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 266.0
-offset_right = 1957.0
-offset_bottom = 1346.0
+offset_left = 776.0
+offset_top = 759.0
+offset_right = 1211.0
+offset_bottom = 867.0
 texture_normal = ExtResource("3_mhnvy")
 texture_pressed = ExtResource("4_4ytvr")
 
 [node name="quit" type="TextureButton" parent="." unique_id=517950790]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 373.0
-offset_right = 1958.0
-offset_bottom = 1453.0
+offset_left = 781.0
+offset_top = 868.0
+offset_right = 1216.0
+offset_bottom = 976.0
 texture_normal = ExtResource("3_mhnvy")
 texture_pressed = ExtResource("4_4ytvr")
 

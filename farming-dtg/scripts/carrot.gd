@@ -9,7 +9,6 @@ var land_ref = null
 @onready var timer_3: Timer = $Timer3
 var player = null
 var player_in_area = false
-var carrot_watered = false
 var stage_4_variants = ["stage_4_a"]
 
 @export var item: InvItem
@@ -40,23 +39,28 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
 			waterprompt.text = "Watered!"
-			carrot_watered = true
-			timer.start()
+			GlobalData.carrot_watered = true
 	if animation == "stage_2" and player_in_area:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
 			waterprompt.text = "Watered!"
-			carrot_watered = true
-			timer_2.start()
+			GlobalData.carrot_watered = true
 	if animation == "stage_3" and player_in_area:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
 			waterprompt.text = "Watered!"
-			carrot_watered = true
-			timer_3.start()
+			GlobalData.carrot_watered = true
 		else:
 			pass
-
+	if GlobalData.player_sleeping == true:
+		if animation == "stage_1":
+			timer.start()
+		if animation == "stage_2":
+			timer_2.start()
+		if animation == "stage_3":
+			timer_3.start()
+		
+		
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
 			GlobalData.carrot_final_stage = false
@@ -70,25 +74,25 @@ func _process(delta: float) -> void:
 	#watering logic for the carrots
 func _on_timer_timeout():
 	GlobalData.carrot_final_stage = true
-	if carrot_watered:
+	if GlobalData.carrot_watered:
 		play("stage_2")
 		timer.stop()
-		carrot_watered = false
+		GlobalData.carrot_watered = false
 
 func _on_timer_2_timeout():
-	if carrot_watered and animation == "stage_2":
+	if GlobalData.carrot_watered and animation == "stage_2":
 		play("stage_3")
 		timer_2.stop()
-		carrot_watered = false
+		GlobalData.carrot_watered = false
 	else:
 		pass
 	
 func _on_timer_3_timeout() -> void:
-	if carrot_watered and animation == "stage_3":
+	if GlobalData.carrot_watered and animation == "stage_3":
 		GlobalData.carrot_final_stage = true
 		play("stage_4_a")
 		timer_3.stop()
-		carrot_watered = false
+		GlobalData.carrot_watered = false
 		
 	else:
 		pass

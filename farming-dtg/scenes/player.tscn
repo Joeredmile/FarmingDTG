@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cfwmgb5xl2nnc" path="res://inventory/inv_ui.tscn" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://xl3wadgr6qax" path="res://assets/light.png" id="7_fjrip"]
 [ext_resource type="PackedScene" uid="uid://taqwdb4ywctk" path="res://scenes/axe.tscn" id="8_smehm"]
-[ext_resource type="PackedScene" uid="uid://cyk2pjj6au3xx" path="res://scenes/ui_for_planting.tscn" id="9_ur7pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(20, 74)
@@ -308,7 +307,8 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=1248459986 groups=["player"]]
-z_index = 1
+z_index = 501
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 inv = ExtResource("2_dqkch")
 
@@ -373,11 +373,5 @@ offset_left = -226.0
 offset_top = 43.0
 offset_right = -5.0
 offset_bottom = 66.0
-
-[node name="UIForPlanting" parent="." unique_id=1910683534 instance=ExtResource("9_ur7pv")]
-offset_left = -138.0
-offset_top = 80.0
-offset_right = -138.0
-offset_bottom = 80.0
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

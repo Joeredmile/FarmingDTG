@@ -11,23 +11,19 @@ var no_ui = false
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func reset_patch():
 	GlobalData.planted = false
 
 func _process(delta):
-	if GlobalData.player_in_patch and Input.is_action_just_pressed("plant"):
+	if GlobalData.player_in_patch and Input.is_action_just_pressed("interact"):
 		#open UI only when its got a land reference and that specific land is not planted
 		if land != null and not land.planted:
 			if not visible:
 				ui()
 
 func ui():
-	if land == null:
-		#pushes an error to the console without stopping the game
-		push_error("UI opened without a land reference")
-		return
 	visible = true
 	#if the player has no seeds it says that then closes
 	if GlobalData.carrot_seeds <= 0 and GlobalData.leek_seeds <= 0:
@@ -55,11 +51,7 @@ func _on_leek_button_pressed() -> void:
 
 func plant_leek():
 	visible = false
-	#check land exists before doing anything
-	if land == null:
-		push_error("plant_leek called but land is null")
-		return
-	#if this patch is already planted, tell player and update buttons then exit
+	#if this patch is already planted, tell player and assupdate buttons then exit
 	if land.planted:
 		label.text = "Already planted here"
 		$leek_button.visible   = (GlobalData.leek_seeds > 0)

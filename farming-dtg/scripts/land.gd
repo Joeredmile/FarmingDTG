@@ -17,16 +17,17 @@ func _on_area_2d_body_entered(body):
 			interactions_label.text = ""
 		GlobalData.player_in_patch = true
 		player_ref = body
-		if body.has_node("UIForPlanting"):
-			body.get_node("UIForPlanting").land = self
+		
+		get_tree().current_scene.get_node("CanvasLayer/UIForPlanting").land = self
 
 #detects player
 func _on_area_2d_body_exited(body):
 	if body.name == "player":
 		interactions_label.text = ""
 		GlobalData.player_in_patch = false
-		if body.has_node("UIForPlanting"):
-			body.get_node("UIForPlanting").land = null
+		
+		get_tree().current_scene.get_node("CanvasLayer/UIForPlanting").land = null
+		
 		player_ref = null
 
 #function for the input key

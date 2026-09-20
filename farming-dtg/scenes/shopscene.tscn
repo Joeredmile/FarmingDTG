@@ -24,9 +24,9 @@ expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=29408915]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 78.0
 offset_top = 59.0
-offset_right = 632.0
+offset_right = 611.0
 offset_bottom = 171.0
 theme_override_constants/separation = 122
 

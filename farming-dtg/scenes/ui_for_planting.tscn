@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyk2pjj6au3xx"]
 
-[ext_resource type="Script" path="res://scripts/ui_for_planting.gd" id="1_xgq1m"]
+[ext_resource type="Script" uid="uid://dllgr1mbalgdr" path="res://scripts/ui_for_planting.gd" id="1_xgq1m"]
 
 [node name="UIForPlanting" type="Control" unique_id=1910683534]
 z_index = 172
@@ -10,6 +10,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -648.0
+offset_right = -576.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8

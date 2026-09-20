@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/axe.png-b3dc51e92f6a2c7984f6fe10f6ccaa2d.ctex"
+uid="uid://b3lo6tsk8r6uf"
+path="res://.godot/imported/time_gui.png-81086e8307496ca25974949d102edfbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/axe.png"
-dest_files=["res://.godot/imported/axe.png-b3dc51e92f6a2c7984f6fe10f6ccaa2d.ctex"]
+source_file="res://assets/gui/button textures/time_gui.png"
+dest_files=["res://.godot/imported/time_gui.png-81086e8307496ca25974949d102edfbe.ctex"]
 
 [params]
 

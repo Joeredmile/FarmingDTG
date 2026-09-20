@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dtk75cf44asfo"]
+
+[ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="1_d7po0"]
+[ext_resource type="Script" uid="uid://b4qeshknc733u" path="res://scripts/house.gd" id="2_qtlar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtlar"]
+size = Vector2(125.333336, 3.666668)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk7hg"]
+size = Vector2(4, 126.66667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se78b"]
+size = Vector2(45.66667, 4.6666718)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
+size = Vector2(128.00002, 17.568642)
+
+[node name="house" type="Sprite2D" unique_id=2051579570]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_d7po0")
+script = ExtResource("2_qtlar")
+
+[node name="collision" type="Area2D" parent="." unique_id=565116294]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="collision" unique_id=436901632]
+position = Vector2(2.861023e-06, -61.833336)
+shape = SubResource("RectangleShape2D_qtlar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision" unique_id=652546404]
+position = Vector2(-62, -2.5431316e-06)
+shape = SubResource("RectangleShape2D_rk7hg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collision" unique_id=1236294412]
+position = Vector2(61.333336, 0)
+shape = SubResource("RectangleShape2D_rk7hg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="collision" unique_id=2096633689]
+position = Vector2(40, 60.000004)
+shape = SubResource("RectangleShape2D_se78b")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="collision" unique_id=1092359066]
+position = Vector2(-40.833336, 60)
+shape = SubResource("RectangleShape2D_se78b")
+
+[node name="doorway" type="Sprite2D" parent="." unique_id=1499481282]
+position = Vector2(-0.3333361, 46.666668)
+scale = Vector2(0.26562497, 0.26562497)
+texture = ExtResource("1_d7po0")
+
+[node name="door" type="Area2D" parent="doorway" unique_id=1343753637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorway/door" unique_id=571922655]
+position = Vector2(8.106232e-06, -53.96077)
+shape = SubResource("RectangleShape2D_3bgk5")
+
+[node name="interactionslabel" type="Label" parent="." unique_id=1834012999]
+anchors_preset = -1
+anchor_left = 0.26200002
+anchor_top = 1.0660001
+anchor_right = 0.26200002
+anchor_bottom = 1.0660001
+offset_left = -17.536003
+offset_top = -69.11468
+offset_right = 22.463997
+offset_bottom = -46.114677
+
+[connection signal="body_entered" from="doorway/door" to="." method="_on_door_body_entered"]
+[connection signal="body_exited" from="doorway/door" to="." method="_on_door_body_exited"]

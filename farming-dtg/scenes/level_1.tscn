@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://cuehhtgsthfu3" path="res://scenes/tree.tscn" id="21_so66j"]
 [ext_resource type="PackedScene" uid="uid://bim1i81hhe0to" path="res://scenes/campfire.tscn" id="22_tr1x6"]
 [ext_resource type="PackedScene" uid="uid://ddmv3ggvs5hbp" path="res://scenes/rabbit.tscn" id="24_wbtxt"]
+[ext_resource type="PackedScene" uid="uid://dtk75cf44asfo" path="res://scenes/house.tscn" id="24_x2fux"]
+[ext_resource type="PackedScene" uid="uid://b1m2h4485s6rn" path="res://ui/time_ui.tscn" id="28_k8ld0"]
+[ext_resource type="PackedScene" uid="uid://cyk2pjj6au3xx" path="res://scenes/ui_for_planting.tscn" id="29_mbb35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbtxt"]
 texture = ExtResource("1_d5akn")
@@ -357,6 +360,7 @@ sources/9 = SubResource("TileSetAtlasSource_2cbcq")
 sources/10 = SubResource("TileSetAtlasSource_x2xxo")
 
 [node name="level_1" type="Node2D" unique_id=488786016]
+y_sort_enabled = true
 
 [node name="shop" parent="." unique_id=1824548626 instance=ExtResource("6_fcfvj")]
 z_index = 1
@@ -366,7 +370,7 @@ position = Vector2(904, 196)
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="tilemaps" unique_id=605400150]
 z_index = 65
-tile_map_data = PackedByteArray("AAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQABAAAAAAACAAAAAAAAAAEAAAADAAAAAAABAAEAAAAEAAAAAQABAAEAAAAAAAMAAQAAAAIAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQACAAAAAAABAAQAAQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAAQAAAABAAAAAAABAAQAAAABAAEAAAADAAQAAAAAAAEAAAAEAAQAAAABAAEAAAAFAAQAAAAAAAEAAAAEAAAAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAAAAAADAAAAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_x2fux")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemaps" unique_id=691803933]
@@ -383,12 +387,11 @@ tile_map_data = PackedByteArray("AAD5/yQAAwAAAAAAAAATACQAAwAAAAAAAAD5/yYAAwABAAA
 tile_set = SubResource("TileSet_rus8k")
 
 [node name="player" parent="." unique_id=1248459986 instance=ExtResource("2_bswci")]
-z_index = 4
 position = Vector2(712, 286)
 
 [node name="shopscene" parent="player" unique_id=1917038553 instance=ExtResource("13_x2xxo")]
 visible = false
-z_index = 6
+z_index = 200
 offset_left = -327.0
 offset_top = -213.0
 offset_right = -327.0
@@ -420,54 +423,52 @@ position = Vector2(432, 211)
 [node name="land8" parent="lands" unique_id=982251312 instance=ExtResource("5_4nkto")]
 position = Vector2(299, 211)
 
-[node name="npc" parent="lands" unique_id=1750434283 instance=ExtResource("5_fcfvj")]
-position = Vector2(401, 470)
-
 [node name="lights" type="Node" parent="." unique_id=1071904227]
 
 [node name="light" parent="lights" unique_id=1012762706 instance=ExtResource("16_7nomh")]
 position = Vector2(900, 203)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1873360795]
+visible = false
 color = Color(1, 1, 1, 0.93333334)
 script = ExtResource("17_1s4pk")
 
-[node name="Node" type="Node" parent="." unique_id=1088466238]
+[node name="trees" type="Node" parent="." unique_id=1088466238]
 
-[node name="tree" parent="Node" unique_id=1619515109 instance=ExtResource("21_so66j")]
+[node name="tree" parent="trees" unique_id=1619515109 instance=ExtResource("21_so66j")]
 position = Vector2(-138, 1779)
 
-[node name="tree2" parent="Node" unique_id=907795005 instance=ExtResource("21_so66j")]
+[node name="tree2" parent="trees" unique_id=907795005 instance=ExtResource("21_so66j")]
 position = Vector2(-248, 1384)
 
-[node name="tree3" parent="Node" unique_id=511968041 instance=ExtResource("21_so66j")]
+[node name="tree3" parent="trees" unique_id=511968041 instance=ExtResource("21_so66j")]
 position = Vector2(1009, 1304)
 
-[node name="tree4" parent="Node" unique_id=712836775 instance=ExtResource("21_so66j")]
+[node name="tree4" parent="trees" unique_id=712836775 instance=ExtResource("21_so66j")]
 position = Vector2(303, 1862)
 
-[node name="tree5" parent="Node" unique_id=599669067 instance=ExtResource("21_so66j")]
+[node name="tree5" parent="trees" unique_id=599669067 instance=ExtResource("21_so66j")]
 position = Vector2(649, 2094)
 
-[node name="tree6" parent="Node" unique_id=1445652146 instance=ExtResource("21_so66j")]
+[node name="tree6" parent="trees" unique_id=1445652146 instance=ExtResource("21_so66j")]
 position = Vector2(-57, 2121)
 
-[node name="tree7" parent="Node" unique_id=1832152402 instance=ExtResource("21_so66j")]
+[node name="tree7" parent="trees" unique_id=1832152402 instance=ExtResource("21_so66j")]
 position = Vector2(105, 600)
 
-[node name="tree8" parent="Node" unique_id=596313496 instance=ExtResource("21_so66j")]
+[node name="tree8" parent="trees" unique_id=596313496 instance=ExtResource("21_so66j")]
 position = Vector2(948, -174)
 
-[node name="tree9" parent="Node" unique_id=466081431 instance=ExtResource("21_so66j")]
-position = Vector2(-124, -43)
+[node name="tree9" parent="trees" unique_id=466081431 instance=ExtResource("21_so66j")]
+position = Vector2(1053, 2122)
 
-[node name="tree10" parent="Node" unique_id=1000164789 instance=ExtResource("21_so66j")]
+[node name="tree10" parent="trees" unique_id=1000164789 instance=ExtResource("21_so66j")]
 position = Vector2(-295, 914)
 
-[node name="tree11" parent="Node" unique_id=1333640998 instance=ExtResource("21_so66j")]
+[node name="tree11" parent="trees" unique_id=1333640998 instance=ExtResource("21_so66j")]
 position = Vector2(865, 496)
 
-[node name="tree12" parent="Node" unique_id=987832783 instance=ExtResource("21_so66j")]
+[node name="tree12" parent="trees" unique_id=987832783 instance=ExtResource("21_so66j")]
 position = Vector2(664, 1529)
 
 [node name="campfire" parent="." unique_id=519755012 instance=ExtResource("22_tr1x6")]
@@ -483,4 +484,32 @@ position = Vector2(-219, 2040)
 position = Vector2(955, 2002)
 
 [node name="rabbit" parent="rabbits" unique_id=588397461 instance=ExtResource("24_wbtxt")]
-position = Vector2(387, -17)
+position = Vector2(834, 1446)
+
+[node name="npc" parent="." unique_id=1750434283 instance=ExtResource("5_fcfvj")]
+position = Vector2(401, 470)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=840786965]
+
+[node name="UIForPlanting" parent="CanvasLayer" unique_id=1910683534 instance=ExtResource("29_mbb35")]
+visible = false
+z_index = 180
+offset_left = -126.0
+offset_top = -109.0
+offset_right = -126.0
+offset_bottom = -109.0
+
+[node name="TimeGui" parent="CanvasLayer" unique_id=1787476444 instance=ExtResource("28_k8ld0")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -268.0
+offset_right = -133.83594
+grow_horizontal = 0
+scale = Vector2(2, 2)
+metadata/_edit_use_anchors_ = true
+
+[node name="house" parent="." unique_id=2051579570 instance=ExtResource("24_x2fux")]
+z_index = 1
+position = Vector2(-86, -50)
+scale = Vector2(2.3125, 2.3125)
