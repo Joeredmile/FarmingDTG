@@ -2,7 +2,7 @@ class_name DateTime extends Resource
 
 @export_range(0, 59) var seconds = 0
 @export_range(0, 59) var minutes = 0
-@export_range(0, 59) var hours = 0
+@export_range(0, 23) var hours = 0
 @export var days = 0
 
 var delta_time: float = 0
@@ -22,13 +22,5 @@ func increase_by_sec(delta_seconds: float) -> void:
 	seconds = seconds % 60
 	minutes = minutes % 60
 	hours = hours % 24
-
+	
 	#print_debug(str(days) + ":" + str(hours) + ":" + str(minutes) + ":" + str(seconds))
-
-func diff_without_days(other_time: DateTime) -> int:
-	var diff_hours = hours - other_time.hours
-	var diff_minutes = minutes - other_time.minutes * diff_hours * 60
-	var diff_seconds = seconds - other_time.seconds + diff_minutes * 60
-	
-	return diff_seconds
-	

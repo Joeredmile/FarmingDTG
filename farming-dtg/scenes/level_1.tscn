@@ -24,10 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://bim1i81hhe0to" path="res://scenes/campfire.tscn" id="22_tr1x6"]
 [ext_resource type="PackedScene" uid="uid://ddmv3ggvs5hbp" path="res://scenes/rabbit.tscn" id="24_wbtxt"]
 [ext_resource type="PackedScene" uid="uid://dtk75cf44asfo" path="res://scenes/house.tscn" id="24_x2fux"]
-[ext_resource type="Script" uid="uid://b2r5kdlywhvjt" path="res://scripts/directional_light.gd" id="27_mmfjm"]
+[ext_resource type="Script" uid="uid://d1lln5c75c20x" path="res://time_system.gd" id="27_k8ld0"]
 [ext_resource type="PackedScene" uid="uid://b1m2h4485s6rn" path="res://ui/time_ui.tscn" id="28_k8ld0"]
-[ext_resource type="Script" uid="uid://dsq3mcn0shue5" path="res://ui/date_time.gd" id="28_mbb35"]
-[ext_resource type="PackedScene" uid="uid://bpn0dddb885ea" path="res://ui/TimeSystem.tscn" id="29_iw4em"]
+[ext_resource type="Script" uid="uid://b856puae430i8" path="res://date_time.gd" id="28_mbb35"]
 [ext_resource type="PackedScene" uid="uid://cyk2pjj6au3xx" path="res://scenes/ui_for_planting.tscn" id="29_mbb35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbtxt"]
@@ -363,13 +362,7 @@ sources/10 = SubResource("TileSetAtlasSource_x2xxo")
 
 [sub_resource type="Resource" id="Resource_iw4em"]
 script = ExtResource("28_mbb35")
-hours = 5
-metadata/_custom_type_script = "uid://dsq3mcn0shue5"
-
-[sub_resource type="Resource" id="Resource_hnsmf"]
-script = ExtResource("28_mbb35")
-hours = 22
-metadata/_custom_type_script = "uid://dsq3mcn0shue5"
+metadata/_custom_type_script = "uid://b856puae430i8"
 
 [node name="level_1" type="Node2D" unique_id=488786016]
 y_sort_enabled = true
@@ -533,16 +526,10 @@ z_index = 1
 position = Vector2(-86, -50)
 scale = Vector2(2.3125, 2.3125)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1139188367 node_paths=PackedStringArray("time_system")]
-color = Color(0.19215687, 0.08627451, 0.46666667, 1)
-blend_mode = 2
-script = ExtResource("27_mmfjm")
-day_color = Color(1, 1, 1, 1)
-night_color = Color(0.19215687, 0.08627451, 0.46666667, 1)
-day_start = SubResource("Resource_iw4em")
-night_start = SubResource("Resource_hnsmf")
-time_system = NodePath("TimeSystem")
+[node name="TimeSystem" type="Node" parent="." unique_id=596630172]
+script = ExtResource("27_k8ld0")
+date_time = SubResource("Resource_iw4em")
+ticks_pr_second = 1
+metadata/_custom_type_script = "uid://d1lln5c75c20x"
 
-[node name="TimeSystem" parent="DirectionalLight2D" unique_id=1061188527 instance=ExtResource("29_iw4em")]
-
-[connection signal="updated" from="DirectionalLight2D/TimeSystem" to="DirectionalLight2D" method="update"]
+[connection signal="updated" from="TimeSystem" to="CanvasLayer/TimeGui" method="_on_time_system_updated"]

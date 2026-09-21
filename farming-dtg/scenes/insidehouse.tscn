@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0s6llvussj2k" path="res://assets/Inner house Floor.png" id="1_8u5w8"]
 [ext_resource type="Script" uid="uid://dkrnyqoolnmwf" path="res://scripts/insidehouse.gd" id="1_qh0dq"]
 [ext_resource type="Texture2D" uid="uid://m4m4f0akpia" path="res://assets/Inner house walls.png" id="2_jvqi6"]
+[ext_resource type="Texture2D" uid="uid://wkpm2otqw1rt" path="res://assets/Bed.png" id="4_p5ywf"]
 [ext_resource type="Texture2D" uid="uid://bt1bqsembq3k5" path="res://icon.svg" id="4_x6xq4"]
 [ext_resource type="Script" uid="uid://cdgbyb8lxgj4a" path="res://scripts/bed.gd" id="5_eeupv"]
 [ext_resource type="PackedScene" uid="uid://b1m2h4485s6rn" path="res://ui/time_ui.tscn" id="6_eeupv"]
@@ -55,7 +56,7 @@ sources/0 = SubResource("TileSetAtlasSource_x6xq4")
 sources/1 = SubResource("TileSetAtlasSource_qh0dq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh0dq"]
-size = Vector2(128.00003, 127)
+size = Vector2(39.27259, 64.76552)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeupv"]
 size = Vector2(128.00002, 126.74502)
@@ -70,22 +71,22 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_eeupv")
 
 [node name="bed" type="Sprite2D" parent="." unique_id=730831657]
-position = Vector2(290, 0)
-scale = Vector2(0.4375, 1)
-texture = ExtResource("4_x6xq4")
+position = Vector2(280.9999, 27.999998)
+scale = Vector2(2.0625026, 2.8564584)
+texture = ExtResource("4_p5ywf")
 script = ExtResource("5_eeupv")
 
 [node name="Area2D" type="Area2D" parent="bed" unique_id=264832630]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bed/Area2D" unique_id=103946035]
-position = Vector2(2.2857056, -0.5)
+position = Vector2(-0.7272949, -0.17504215)
 shape = SubResource("RectangleShape2D_qh0dq")
 
 [node name="SleepLabel" type="Label" parent="bed" unique_id=324246991]
-offset_left = -274.28574
-offset_top = -124.0
-offset_right = 240.0004
-offset_bottom = -101.0
+offset_left = -102.30299
+offset_top = -59.51426
+offset_right = 411.98315
+offset_bottom = -36.51426
 
 [node name="SleepTimer" type="Timer" parent="bed" unique_id=251621832]
 
