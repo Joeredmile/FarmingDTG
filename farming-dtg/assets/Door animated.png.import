@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"
+uid="uid://blslp7aq6pyr5"
+path="res://.godot/imported/Door animated.png-7a34077e5d3cc272dc66557b64d1f6c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Axe.png"
-dest_files=["res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"]
+source_file="res://assets/Door animated.png"
+dest_files=["res://.godot/imported/Door animated.png-7a34077e5d3cc272dc66557b64d1f6c7.ctex"]
 
 [params]
 

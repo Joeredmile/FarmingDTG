@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twgnjf42ynrc"
-path="res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"
+uid="uid://csvcyvhw2sta8"
+path="res://.godot/imported/Farm house.png-f71c442e747688e15032f5534f7d773d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Axe.png"
-dest_files=["res://.godot/imported/Axe.png-b112ab8b4d6429467a48e2276c07da68.ctex"]
+source_file="res://assets/Farm house.png"
+dest_files=["res://.godot/imported/Farm house.png-f71c442e747688e15032f5534f7d773d.ctex"]
 
 [params]
 
