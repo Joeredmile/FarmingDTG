@@ -27,11 +27,13 @@ var current_state: DayState
 	DayState.NIGHT: night_color,
 }
 
-#func _ready() -> void:
-#	var diff_day_start = time_system.date_time.diff_without_days(day_start)
-#	var diff_night_start = time_system.date_time.diff_without_days(night_start)
-#	if diff_day_start < 0 || diff_night_start > 0:
-#		current_state = DayState.NIGHT
+func _ready() -> void:
+	var diff_day_start = time_system.date_time.diff_without_days(day_start)
+	var diff_night_start = time_system.date_time.diff_without_days(night_start)
+	if diff_day_start < 0 || diff_night_start > 0:
+		current_state = DayState.NIGHT
+	time_system.updated.connect(update)
+
 
 
 
@@ -45,15 +47,15 @@ func update(game_time: DateTime) -> void:
 	if time_diff > 0 && time_diff < (transition_time * 60):
 		in_transition = true
 	
-	#if in_transition:
-	#	update_transition(time_diff, next_state)
-	#elif time_diff > 0 && time_diff < (transition_time * 60):
-	#	in_transition = true
-	#	update_transition(time_diff, next_state)
-	#else:
-	#	color = color_map[current_state]
-	#if time_diff > 0 && time_diff < (transition_time * 60):
-	#	in_transition = true
+	if in_transition:
+		update_transition(time_diff, next_state)
+	elif time_diff > 0 && time_diff < (transition_time * 60):
+		in_transition = true
+		update_transition(time_diff, next_state)
+	else:
+		color = color_map[current_state]
+	if time_diff > 0 && time_diff < (transition_time * 60):
+		in_transition = true
 		#update it
 	
 
