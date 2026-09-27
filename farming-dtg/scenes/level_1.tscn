@@ -541,11 +541,11 @@ scale = Vector2(1, 1)
 [node name="TimeSystem" type="Node" parent="." unique_id=596630172]
 script = ExtResource("27_k8ld0")
 date_time = SubResource("Resource_iw4em")
-ticks_pr_second = 1000
+ticks_pr_second = 600
 metadata/_custom_type_script = "uid://d1lln5c75c20x"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2058400131 node_paths=PackedStringArray("time_system")]
-color = Color(0.19215687, 0.08627451, 0.46666667, 1)
+color = Color(0.20137382, 0.101062395, 0.438857, 1)
 blend_mode = 2
 script = ExtResource("29_iw4em")
 day_color = Color(1, 1, 1, 1)
@@ -553,6 +553,9 @@ night_color = Color(1, 1, 1, 1)
 day_start = SubResource("Resource_hnsmf")
 night_start = SubResource("Resource_nossa")
 time_system = NodePath("../TimeSystem")
+
+[node name="rabbit" parent="." unique_id=1565625379 instance=ExtResource("24_wbtxt")]
+position = Vector2(232, 448)
 
 [connection signal="updated" from="TimeSystem" to="CanvasLayer/TimeGui" method="_on_time_system_updated"]
 [connection signal="updated" from="TimeSystem" to="DirectionalLight2D" method="update"]

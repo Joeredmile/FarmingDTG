@@ -33,22 +33,22 @@ func _on_watering_body_exited(body: Node2D) -> void:
 		waterprompt.visible = false
 
 
-	#making it so i can water the plants
+	#making it so i can water the plants at each stage of the growth cycle
 func _process(delta: float) -> void:
 	if animation == "stage_1" and player_in_area:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
-			waterprompt.text = "Watered!"
+			waterprompt.text = "Watered! Come back Tommorow."
 			GlobalData.carrot_watered = true
 	if animation == "stage_2" and player_in_area:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
-			waterprompt.text = "Watered!"
+			waterprompt.text = "Watered! Come back Tommorow."
 			GlobalData.carrot_watered = true
 	if animation == "stage_3" and player_in_area:
 		if Input.is_action_just_pressed("water"):
 			waterprompt.visible = true
-			waterprompt.text = "Watered!"
+			waterprompt.text = "Watered! Come back Tommorow."
 			GlobalData.carrot_watered = true
 		else:
 			pass
@@ -63,6 +63,7 @@ func _process(delta: float) -> void:
 		
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
+			GlobalData.carrots_placed.erase(self)
 			GlobalData.carrot_final_stage = false
 			player.collect(item)
 			GlobalData.carrot_amount += 1
@@ -112,8 +113,15 @@ func sleep_day():
 	elif animation == "stage_3":
 		timer_3.start()
 
-#Picking up the carrots wait no im gonna try something else
+
+
+
+
+
+
+
 #func _on_area_2d_body_entered(body: Node2D):
+#Picking up the carrots wait no im gonna try something else
 	#if body.name == "player":
 		#if animation == "stage_4_a":
 			#GlobalData.carrot_amount += 1

@@ -8,11 +8,14 @@ extends Sprite2D
 var can_enter = false
 var house_scene = preload("res://scenes/insidehouse.tscn")
 
+func _ready() -> void:
+	interactions_label.text = ""
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_enter == true:
-		doorway.play
+		doorway.play("entering")
 		timer.start()
+		can_enter = false
 		
 func _on_door_body_entered(body: Node2D) -> void:
 	if body.name == "player":
@@ -22,11 +25,12 @@ func _on_door_body_entered(body: Node2D) -> void:
 
 func _on_door_body_exited(body: Node2D) -> void:
 	if body.name == "player":
-		#interactions_label.text = ""
+		interactions_label.text = ""
 		can_enter = false
 
 
 func _on_timer_timeout() -> void:
+		doorway.stop()
 		get_tree().current_scene.get_node("campfire").visible = false
 		can_enter = false
 		interactions_label.text = ""

@@ -63,6 +63,8 @@ func plant_leek():
 	if not is_instance_valid(leek) or not is_instance_valid(land):
 		print("Cannot move leek. Land or leek has been freed/destroyed.")
 		return
+	#this should mark the leek in var for rabbit to see
+	GlobalData.leeks_placed.append(leek)
 	#place leek at the land position and set its reference
 	leek.global_position = land.global_position
 	land.get_parent().add_child(leek)
@@ -96,6 +98,8 @@ func plant_carrot():
 	if not is_instance_valid(carrot) or not is_instance_valid(land):
 		print("Cannot move carrot. Land or carrot has been freed/destroyed.")
 		return
+	#this should mark the carrot in var for rabbit to see
+	GlobalData.carrots_placed.append(carrot)
 	#place carrot at the land position and set its reference
 	carrot.global_position = land.global_position
 	land.get_parent().add_child(carrot)

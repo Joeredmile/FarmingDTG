@@ -110,18 +110,19 @@ anchor_left = 0.26200002
 anchor_top = 1.0660001
 anchor_right = 0.26200002
 anchor_bottom = 1.0660001
-offset_left = 466.82355
-offset_top = -15.058838
-offset_right = 506.82355
-offset_bottom = 7.941162
-text = "hi lol"
+offset_left = 421.64713
+offset_top = -60.2353
+offset_right = 843.2942
+offset_bottom = 76.7647
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doorway/door" unique_id=571922655]
 position = Vector2(391.52948, -223.68637)
 shape = SubResource("RectangleShape2D_3bgk5")
 
 [node name="Timer" type="Timer" parent="." unique_id=1256409929]
-wait_time = 1.5
+one_shot = true
 
 [connection signal="body_entered" from="doorway/door" to="." method="_on_door_body_entered"]
 [connection signal="body_exited" from="doorway/door" to="." method="_on_door_body_exited"]

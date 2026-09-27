@@ -3,6 +3,9 @@ extends Node
 @onready var player: CharacterBody2D = get_node("/root/level_1/player")
 @onready var bullet_timer: Timer = $bulletTimer
 
+
+var carrots_placed = [] 
+var leeks_placed = [] 
 var carrot_amount = 0
 var coin_amount = 0
 var collisons = false
@@ -19,7 +22,6 @@ var player_in_patch = false
 var planted = false
 var carrot_final_stage = false
 var leek_final_stage = false
-var vege_planted = []
 var player_sleeping = false
 var carrot_watered = true
 var outside_house_position: Vector2 = Vector2.ZERO

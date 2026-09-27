@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		if animation == "stage_4_a":
+			GlobalData.leeks_placed.erase(self)
 			player.collect(item)
 			GlobalData.leek_amount += 1
 			print(GlobalData.leek_amount)

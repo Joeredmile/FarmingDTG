@@ -89,7 +89,7 @@ size = Vector2(49, 49)
 [node name="carrot" type="AnimatedSprite2D" unique_id=1070333889 groups=["carrot"]]
 z_index = 31
 sprite_frames = SubResource("SpriteFrames_wql3v")
-animation = &"stage_3"
+animation = &"stage_4_a"
 autoplay = "stage_1"
 script = ExtResource("2_elckd")
 item = ExtResource("4_x0dx6")
@@ -118,13 +118,13 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="." unique_id=1914841187]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=238873818]
-position = Vector2(1.5, 3)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_elckd")
 
 [node name="watering" type="Area2D" parent="." unique_id=835925954]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="watering" unique_id=2143018933]
-position = Vector2(1.5, 3.5)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_mb1r7")
 
 [connection signal="timeout" from="waterprompt/text_timer" to="." method="_on_text_timer_timeout"]

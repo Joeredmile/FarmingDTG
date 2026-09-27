@@ -23,6 +23,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		can_sleep = false
 
 func _on_sleep_timer_timeout() -> void:
+	
 	sleep_screen.visible = false
 	sleep_label.text = ""
 
