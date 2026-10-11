@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://b3uourbfloq1p" path="res://scripts/rabbit.gd" id="1_dxh4p"]
 [ext_resource type="Texture2D" uid="uid://dugvueq6i1mlr" path="res://assets/bunny.png" id="2_dxh4p"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxh4p"]
+size = Vector2(22, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haj5u"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxh4p"]
 atlas = ExtResource("2_dxh4p")
 region = Rect2(0, 0, 64, 64)
@@ -58,14 +63,23 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxh4p"]
-size = Vector2(22, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_haj5u"]
-
 [node name="rabbit" type="CharacterBody2D" unique_id=588397461]
 z_index = 1
 script = ExtResource("1_dxh4p")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=659687177]
+position = Vector2(5.9604645e-08, 5.9604645e-08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2001504816]
+position = Vector2(-1, 0)
+rotation = 0.008726646
+shape = SubResource("RectangleShape2D_dxh4p")
+
+[node name="detectplayer" type="Area2D" parent="." unique_id=1254718879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectplayer" unique_id=172876173]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_haj5u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499493003]
 position = Vector2(-0.5000019, -0.5000019)
@@ -74,13 +88,6 @@ sprite_frames = SubResource("SpriteFrames_dcyra")
 animation = &"dead"
 autoplay = "move"
 
-[node name="hitbox" type="Area2D" parent="." unique_id=659687177]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2001504816]
-position = Vector2(-1, 0)
-rotation = 0.008726646
-shape = SubResource("RectangleShape2D_dxh4p")
-
 [node name="Timer" type="Timer" parent="." unique_id=1235248362]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1425059992]
@@ -88,15 +95,9 @@ shape = SubResource("RectangleShape2D_dxh4p")
 [node name="Timer2" type="Timer" parent="." unique_id=426488384]
 autostart = true
 
-[node name="detectplayer" type="Area2D" parent="." unique_id=1254718879]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectplayer" unique_id=172876173]
-scale = Vector2(10, 10)
-shape = SubResource("RectangleShape2D_haj5u")
-
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="detectplayer" to="." method="_on_detectplayer_body_entered"]
 [connection signal="body_exited" from="detectplayer" to="." method="_on_detectplayer_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

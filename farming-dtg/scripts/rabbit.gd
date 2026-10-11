@@ -35,12 +35,15 @@ func _process(delta: float) -> void:
 	#if theres a carrot it will find it and run towards it
 	if GlobalData.carrots_placed != []:
 		var carrot_chase = GlobalData.carrots_placed[0]
-		var direction = (carrot_chase.global_position - global_position).normalized()
-		velocity = direction * speed
-		move_and_slide()
-		if direction.x != 0:
-			$AnimatedSprite2D.flip_h = (direction.x < 0)
-			
+		if is_instance_valid(carrot_chase):
+			var direction = (carrot_chase.global_position - global_position).normalized()
+			velocity = direction * speed
+			move_and_slide()
+			if direction.x != 0:
+				$AnimatedSprite2D.flip_h = (direction.x < 0)
+		else:
+			GlobalData.carrots_placed.remove_at(0)
+	
 	
 			
 	else:

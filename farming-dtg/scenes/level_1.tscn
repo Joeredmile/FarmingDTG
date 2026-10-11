@@ -511,6 +511,9 @@ position = Vector2(955, 2002)
 [node name="rabbit" parent="rabbits" unique_id=588397461 instance=ExtResource("24_wbtxt")]
 position = Vector2(834, 1446)
 
+[node name="rabbit2" parent="rabbits" unique_id=1565625379 instance=ExtResource("24_wbtxt")]
+position = Vector2(440, 1080)
+
 [node name="npc" parent="." unique_id=1750434283 instance=ExtResource("5_fcfvj")]
 position = Vector2(401, 470)
 
@@ -535,7 +538,7 @@ scale = Vector2(2, 2)
 
 [node name="house" parent="." unique_id=2051579570 instance=ExtResource("24_x2fux")]
 z_index = 1
-position = Vector2(-86, -50)
+position = Vector2(64, -88)
 scale = Vector2(1, 1)
 
 [node name="TimeSystem" type="Node" parent="." unique_id=596630172]
@@ -553,9 +556,6 @@ night_color = Color(1, 1, 1, 1)
 day_start = SubResource("Resource_hnsmf")
 night_start = SubResource("Resource_nossa")
 time_system = NodePath("../TimeSystem")
-
-[node name="rabbit" parent="." unique_id=1565625379 instance=ExtResource("24_wbtxt")]
-position = Vector2(232, 448)
 
 [connection signal="updated" from="TimeSystem" to="CanvasLayer/TimeGui" method="_on_time_system_updated"]
 [connection signal="updated" from="TimeSystem" to="DirectionalLight2D" method="update"]

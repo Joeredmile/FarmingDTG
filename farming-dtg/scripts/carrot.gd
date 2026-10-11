@@ -114,10 +114,14 @@ func sleep_day():
 		timer_3.start()
 
 
+	
 
 
-
-
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Carrot touched area: ", area.name)
+	if area.name == "hitbox":
+		print("body entered 2")
+		queue_free()
 
 
 #func _on_area_2d_body_entered(body: Node2D):
