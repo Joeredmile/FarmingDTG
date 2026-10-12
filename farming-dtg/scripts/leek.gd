@@ -97,8 +97,11 @@ func _on_timer_3_timeout() -> void:
 func _on_text_timer_timeout() -> void:
 	waterprompt.visible = false
 	
-	
-	
-	
-	
-	
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Carrot touched area: ", area.name)
+	if area.name == "hitbox":
+		print("body entered 2")
+		queue_free()

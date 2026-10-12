@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cemdh7l86ica8"]
+
+[ext_resource type="Script" uid="uid://d2ibt3foihmnn" path="res://scenes/help.gd" id="1_2by0i"]
+[ext_resource type="LabelSettings" uid="uid://ccdfjon070v53" path="res://assets/gui/menu_label.tres" id="1_chmrd"]
+[ext_resource type="Texture2D" uid="uid://p08xvsnhvlww" path="res://assets/Button stationary.png" id="2_2by0i"]
+[ext_resource type="Texture2D" uid="uid://gxh8u7ke2gav" path="res://assets/Button pressed (1).png" id="3_oar4r"]
+
+[node name="help" type="Control" unique_id=428040863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2by0i")
+
+[node name="Label" type="Label" parent="." unique_id=1505095869]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 379.0
+offset_right = 1576.0
+offset_bottom = 607.0
+text = "insert tutorial here"
+label_settings = ExtResource("1_chmrd")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=780394804]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 844.0
+offset_right = 1158.0
+offset_bottom = 952.0
+texture_normal = ExtResource("2_2by0i")
+texture_pressed = ExtResource("3_oar4r")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=980539049]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 26.0
+offset_right = 262.0
+offset_bottom = 66.0
+text = "back"
+label_settings = ExtResource("1_chmrd")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

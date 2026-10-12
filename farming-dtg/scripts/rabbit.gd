@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 class_name Enemy
 
-const dead_color = Color("#000000")
-
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
@@ -43,7 +41,17 @@ func _process(delta: float) -> void:
 				$AnimatedSprite2D.flip_h = (direction.x < 0)
 		else:
 			GlobalData.carrots_placed.remove_at(0)
-	
+		
+	if GlobalData.leeks_placed != []:
+		var leek_chase = GlobalData.leeks_placed[0]
+		if is_instance_valid(leek_chase):
+			var direction = (leek_chase.global_position - global_position).normalized()
+			velocity = direction * speed
+			move_and_slide()
+			if direction.x != 0:
+				$AnimatedSprite2D.flip_h = (direction.x < 0)
+		else:
+			GlobalData.leeks_placed.remove_at(0)
 	
 			
 	else:
@@ -80,7 +88,6 @@ func _process(delta: float) -> void:
 				if direction.x != 0:
 					$AnimatedSprite2D.flip_h = (direction.x < 0)
 			
-			
 #choose new state
 func choose(array):
 	array.shuffle()
@@ -93,7 +100,6 @@ func move(delta):
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.name == "bullet":
 		speed = 0
-		canvas_modulate.color = dead_color
 		animated_sprite_2d.play("dead")
 		animated_sprite_2d.rotate(-50)
 		speed = 0

@@ -90,8 +90,6 @@ autoplay = "move"
 
 [node name="Timer" type="Timer" parent="." unique_id=1235248362]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1425059992]
-
 [node name="Timer2" type="Timer" parent="." unique_id=426488384]
 autostart = true
 
